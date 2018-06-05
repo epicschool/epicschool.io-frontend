@@ -41,17 +41,14 @@ node_modules/.bin/cypress open
 ## npm dependencies
 ``` bash
   "dependencies": {
-        "axios": "^0.17.1",
-        "buefy": "^0.6.3",
-        "bulma": "^0.6.2",
-        "register-service-worker": "^1.0.0",
-        "vue": "^2.5.13",
-        "vue-class-component": "^6.0.0",
-        "vue-property-decorator": "^6.0.0",
-        "vue-router": "^3.0.1",
-        "vuex": "^3.0.1",
-        "vuex-persistedstate": "^2.4.2"
-  }
+    "bulma": "^0.7.1",
+    "register-service-worker": "^1.0.0",
+    "vue": "^2.5.16",
+    "vue-class-component": "^6.0.0",
+    "vue-property-decorator": "^6.0.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  },
 
 For a detailed explanation on how things work, check out the following links : </br>
 + [vue webpack template guide](https://vuejs-templates.github.io/webpack/) </br>
