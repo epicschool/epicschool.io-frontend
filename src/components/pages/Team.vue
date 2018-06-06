@@ -2,18 +2,19 @@
     <div class="hero-body">
         <div class="container has-text-centered">
             <div class="columns is-vcentered">
-                <div class="column is-5">
-                    <figure class="image is-4by3">
-                        <img src="https://picsum.photos/800/600/?random" alt="Description">
-                    </figure>
-                </div>
-                <div class="column is-6 is-offset-1">
-                    <h1 class="title is-2">
-                        Team
-                    </h1>
-                    <h2 class="subtitle is-4">
-                        our nab team
-                    </h2>
+                <div v-for="teamMember in teamMembers" :key="teamMember.id"  class="column is-3 ">
+           
+                            <figure class="image is-4by3">
+                                <img :src="teamMember.imagePath" alt="Placeholder image">
+                            </figure>
+            
+                    <div class="title is-2">
+                        {{teamMember.name}}
+                        
+                    </div>
+                    <div class="subtitle is-6 team-description">
+                        {{teamMember.description}}
+                    </div>
                     <br>
                     <p class="has-text-centered">
                         <a class="button is-medium is-info is-outlined">
@@ -31,11 +32,28 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
 export default class Team extends Vue {
-
+        protected teamMembers = [
+            {
+                id: 1,
+                name: 'Majed',
+                description: 'Full Stack Software Developer',
+                imagePath: 'img/team/majed.png',
+            },
+            {
+                id: 2,
+                name: 'Mark',
+                description: 'Student & Technology Geek',
+                imagePath: 'img/team/mark.png',
+            },
+        ];
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-
+.team-description {
+    height: 35px;
+    // text-align: left;
+    // overflow-y: scroll;
+}
 </style>
