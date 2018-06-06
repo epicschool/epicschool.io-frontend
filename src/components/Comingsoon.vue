@@ -31,7 +31,7 @@
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
 @Component
-export default class Intro extends Vue {
+export default class Comingsoon extends Vue {
 
 }
 </script>

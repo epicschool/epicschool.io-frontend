@@ -1,10 +1,56 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
-    <router-view/>
+      
+    <section class="hero is-fullheight is-default is-bold">
+        <div class="hero-head">
+            <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <router-link class="navbar-item" to="/">
+                        <img src="./assets/epicschool_logo.png" alt="Logo">
+                    </router-link>
+                    <span class="navbar-burger burger" data-target="navbarMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </div>
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end"><div class="tabs is-right">
+                        <ul>
+                            <li>
+                                <router-link class="navbar-item" to="/">Home</router-link>
+                            </li>
+                            <li>
+                                <router-link class="navbar-item" to="/Courses">Courses</router-link>
+                            </li>
+                            <li>
+                                <router-link class="navbar-item" to="/ContactUs">Contact us</router-link>
+                            </li>
+                            <li>
+                                <router-link class="navbar-item" to="/Team">Team</router-link>
+                            </li>
+       
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </nav>
+        </div>
+
+        <router-view/>
+
+        <div class="hero-foot">
+            <div class="container">
+                <div class="tabs is-centered">
+                    <ul>
+                        <li><a>And this at the bottom</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
   </div>
 </template>
 

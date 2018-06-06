@@ -3,19 +3,19 @@
     <!-- <img src="../assets/logo.png"> -->
 
     <!-- <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
-    <intro></intro>
+    <comingsoon></comingsoon>
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
 import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-import Intro from '@/components/Intro.vue'; 
+import Comingsoon from '@/components/Comingsoon.vue';
 
 @Component({
   components: {
     HelloWorld,
-    Intro
+    Comingsoon,
   },
 })
 export default class Home extends Vue {}
