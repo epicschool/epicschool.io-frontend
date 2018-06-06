@@ -24,11 +24,12 @@
                             <li>
                                 <router-link class="navbar-item" to="/Courses">Courses</router-link>
                             </li>
-                            <li>
-                                <router-link class="navbar-item" to="/ContactUs">Contact us</router-link>
-                            </li>
+                      
                             <li>
                                 <router-link class="navbar-item" to="/Team">Team</router-link>
+                            </li>
+                            <li>
+                                <router-link class="navbar-item" to="/ContactUs">Contact us</router-link>
                             </li>
        
                         </ul>
@@ -53,7 +54,52 @@
     </section>
   </div>
 </template>
+<script lang="ts">
+    import { Component, Prop, Vue } from 'vue-property-decorator';
+    import router from 'vue-router'
 
+    @Component({
+        name:'App',
+        components: {
+        }
+    })
+
+    export default class App extends Vue {
+
+        // @Getter('account/currentUser') currentUser
+
+        mounted() {
+            this.bulmaNavbar();
+        }
+
+        bulmaNavbar() {
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // Get all "navbar-burger" elements
+                var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+                // Check if there are any navbar burgers
+                if ($navbarBurgers.length > 0) {
+                    // Add a click event on each of them
+                    $navbarBurgers.forEach(function($el) {
+                        $el.addEventListener('click', function() {
+
+                            // Get the target from the "data-target" attribute
+                            var target = $el.dataset.target;
+                            target = document.getElementById(target);
+
+                            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+                            $el.classList.toggle('is-active');
+                            target.classList.toggle('is-active');
+                        });
+                    });
+                }
+
+            });
+        }
+
+    }
+</script>
 <style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
