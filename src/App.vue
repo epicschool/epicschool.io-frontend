@@ -3,40 +3,39 @@
       
     <section class="hero is-fullheight is-default is-bold">
         <div class="hero-head">
-            <nav class="navbar">
-            <div class="container">
-                <div class="navbar-brand">
-                    <router-link class="navbar-item" to="/">
-                        <img src="./assets/epicschool_logo.png" alt="Logo">
-                    </router-link>
-                    <span class="navbar-burger burger" data-target="navbarMenu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </span>
-                </div>
-                <div id="navbarMenu" class="navbar-menu">
-                    <div class="navbar-end"><div class="tabs is-right">
-                        <ul>
-                            <li>
-                                <router-link class="navbar-item" to="/">Home</router-link>
-                            </li>
-                            <li>
-                                <router-link class="navbar-item" to="/Courses">Courses</router-link>
-                            </li>
-                      
-                            <li>
-                                <router-link class="navbar-item" to="/Team">Team</router-link>
-                            </li>
-                            <li>
-                                <router-link class="navbar-item" to="/ContactUs">Contact us</router-link>
-                            </li>
-       
-                        </ul>
+            <nav id="nav" class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <router-link class="navbar-item" to="/">
+                            <img src="./assets/epicschool_logo.png" alt="Logo">
+                        </router-link>
+                        <span class="navbar-burger burger" data-target="navbarMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenu" class="navbar-menu">
+                        <div class="navbar-end"><div class="tabs is-right">
+                            <ul>
+                                <li>
+                                    <router-link  class="navbar-item" to="/"><span v-on:click="setActiveMenu('Home')">Home</span></router-link>
+                                </li>
+                                <li>
+                                    <router-link  class="navbar-item" to="/Courses"><span v-on:click="setActiveMenu('Courses')">Courses</span></router-link>
+                                </li>
+                                <li>
+                                    <router-link  class="navbar-item" to="/Team"><span v-on:click="setActiveMenu('Team')">Team</span></router-link>
+                                </li>
+                                <li>
+                                    <router-link  class="navbar-item" to="/ContactUs"><span v-on:click="setActiveMenu('Contactus')">Contact us</span></router-link>
+                                </li>
+        
+                            </ul>
+                        </div>
+                    </div>
                     </div>
                 </div>
-                </div>
-            </div>
             </nav>
         </div>
 
@@ -46,7 +45,7 @@
             <div class="container">
                 <div class="tabs is-centered">
                     <ul>
-                        <li><a>And this at the bottom</a></li>
+                        <li><a href="https://epicschool.io/"><b>(▀̿Ĺ̯▀̿ ̿) ©2018 Epicschool </b></a></li>
                     </ul>
                 </div>
             </div>
@@ -66,10 +65,15 @@
 
     export default class App extends Vue {
 
-        // @Getter('account/currentUser') currentUser
+        protected activeMenu:String = ''
 
         mounted() {
             this.bulmaNavbar();
+        }
+
+        setActiveMenu(menuName:String) {
+            console.log('setting active menu',menuName);
+            this.activeMenu = menuName ;
         }
 
         bulmaNavbar() {
@@ -109,12 +113,11 @@
   color: #2c3e50;
 }
 #nav {
-  padding: 30px;
   a {
     font-weight: bold;
     color: #2c3e50;
     &.router-link-exact-active {
-      color: #42b983;
+      color: #a409af;
     }
   }
 }
