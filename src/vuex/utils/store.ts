@@ -1,5 +1,5 @@
-import Vue from "vue";
-import Vuex, { MutationTree, ActionTree } from "vuex";
+import Vue from 'vue';
+import Vuex, { MutationTree, ActionTree, } from 'vuex';
 
 Vue.use(Vuex);
 
@@ -34,7 +34,7 @@ const module = {
     state,
     getters,
     mutations,
-    actions
+    actions,
 };
 
 export default module;

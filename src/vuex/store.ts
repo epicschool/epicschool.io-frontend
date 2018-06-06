@@ -20,6 +20,6 @@ export default new Vuex.Store({
         account,
 
         // Utils
-        utils
+        utils,
     }
 });

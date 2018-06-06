@@ -55,7 +55,7 @@
 </template>
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
-    import router from 'vue-router'
+    import router from 'vue-router';
 
     @Component({
         name:'App',
