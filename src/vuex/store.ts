@@ -4,8 +4,6 @@ import * as User from "../models/user";
 
 // Import different modules
 import account from './modules/account/store'
-import organisation from './modules/organisation/store'
-import event from './modules/event/store'
 
 // Utils
 import utils from './utils/store'
@@ -20,8 +18,6 @@ export default new Vuex.Store({
     modules: {
         // All modules
         account,
-        organisation,
-        event,
 
         // Utils
         utils

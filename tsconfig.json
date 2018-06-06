@@ -11,6 +11,9 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
+    "noImplicitAny": false, // Needed because some node modules are not yet correctly typed
+    "strictPropertyInitialization": false, // Needed to turn off errors for binded props
+
     "types": [
       "node",
       "mocha",
