@@ -69,5 +69,6 @@ For a detailed explanation on how things work, check out the following links : <
 
 
 ---
-By [Majed Fayazi](https://majed.life)</br>
+By [Majed Fayazi](https://majed.life) and [Mark Marolf](http://markmarolf.com/) 
+
 [Prine Software Engineering](https://prine.ch)</br>
