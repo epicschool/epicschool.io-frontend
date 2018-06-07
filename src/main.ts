@@ -10,12 +10,17 @@ import './assets/sass/main.scss'
 // Font awesome icons (4.7)
 import 'font-awesome/css/font-awesome.min.css'
 
+// import FontAwesomeIcon from 'fortawesome/vue-fontawesome'
+
 // -- BUEFY --
 // Vue JS Components for Bulma
 import Buefy from 'buefy'
 Vue.use(Buefy, {
     defaultIconPack: 'fas', // Maybe change to fas (new one)
 })
+
+
+// Vue.use(FontAwesomeIcon);
 
 Vue.config.productionTip = false;
 

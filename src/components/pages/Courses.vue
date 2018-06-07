@@ -74,6 +74,14 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
                 imagePath: 'img/courses/3d.png',
                 categoryImagePath: 'img/courses/3d.png',
             },
+            {
+                id: 4,
+                title: 'Laravel',
+                description: 'Laravel fixed',
+                categoryTitle: 'Web Programming',
+                imagePath: 'img/courses/laravel.jpg',
+                categoryImagePath: 'img/courses/code.jpg',
+            },
         ];
 
 
