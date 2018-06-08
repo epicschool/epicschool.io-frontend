@@ -8,6 +8,7 @@ import Home from '@/components/pages/Home.vue';
 import ContactUs from '@/components/pages/ContactUs.vue';
 import Team from '@/components/pages/Team.vue';
 import Courses from '@/components/pages/Courses.vue';
+import AccountSettings from '@/components/pages/AccountSettings.vue';
 
 import Auth from '@/components/Auth.vue';
 import Login from '@/components/auth/Login.vue';
@@ -51,6 +52,11 @@ export default new Router({
                 name: 'courses',
                 component: Courses,
             },
+            {
+                path: 'account',
+                name: 'AccountSettings',
+                component: AccountSettings,
+            },
         ]
     },
     {
@@ -76,6 +82,7 @@ export default new Router({
                 name: 'register',
                 component: Register,
             },
+  
 
         ]
     },
