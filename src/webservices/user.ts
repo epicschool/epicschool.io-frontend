@@ -4,7 +4,7 @@ import {
 } from '../models/user';
 
 class UserWebservice {
-    
+
     /**
      * Call the login method on api
      *
@@ -12,22 +12,22 @@ class UserWebservice {
      * @param password Password
      */
     public login(email: string, password: string) {
-        return axios.post("/auth/login", {
-            grant_type: "password",
-            email: email,
-            password: password
-        })
+        return axios.post('/auth/login', {
+            grant_type: 'password',
+            email,
+            password,
+        });
     }
 
     public register(user: User) {
         return axios.post('/auth/register', {
-            grant_type: "password",
+            grant_type: 'password',
             firstname: user.firstname,
             lastname: user.lastname,
             email: user.email,
             password: user.password,
-            password_confirmation: user.password_confirmation
-        })
+            password_confirmation: user.password_confirmation,
+        });
     }
 
     public logout() {
@@ -38,7 +38,7 @@ class UserWebservice {
         return axios.get('/auth/userinfo');
     }
 
-    public changeNameAndAddress(user:User) {
+    public changeNameAndAddress(user: User) {
         return axios.post('/auth/changeNameAndAddress', {
             firstname: user.firstname,
             lastname: user.lastname,
@@ -50,16 +50,16 @@ class UserWebservice {
         });
     }
 
-    public changeEmail(new_email:string) {
+    public changeEmail(newEmail: string) {
         return axios.post('/auth/changeEmail', {
-            new_email: new_email,
+            new_email: newEmail,
         });
     }
 
-    public changePassword(current_password:string,new_password: string) {
+    public changePassword(currentPassword: string, newPassword: string) {
         return axios.post('/auth/changePassword', {
-            current_password: current_password,
-            new_password: new_password,
+            current_password: currentPassword,
+            new_password: newPassword,
         });
     }
 

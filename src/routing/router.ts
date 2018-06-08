@@ -57,7 +57,7 @@ export default new Router({
                 name: 'AccountSettings',
                 component: AccountSettings,
             },
-        ]
+        ],
     },
     {
         path: '/auth',
@@ -82,9 +82,9 @@ export default new Router({
                 name: 'register',
                 component: Register,
             },
-  
 
-        ]
+
+        ],
     },
 
   ],
