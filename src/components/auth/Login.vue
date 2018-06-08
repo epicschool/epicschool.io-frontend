@@ -13,7 +13,7 @@
               <img class="login-image" src="img/gifs/Satura_power.gif">
               
             </figure>
-            <form>
+
               <div class="field">
                 <div class="control">
                   <input class="input is-large" v-model.lazy="user.email"  id="login_email" name="email" type="email" placeholder="Your Email" autofocus="">
@@ -27,7 +27,7 @@
               </div>
       
               <button class="button is-block is-primary is-large is-fullwidth" v-on:click="login()" @keyup.enter="login" :disabled="disabled">Sign in</button>
-            </form>
+     
           </div>
             <div class="form-group">
                 <span id="errorMsg" style="color:red; font-weight: 600">{{errorMsg}}<br/></span>
@@ -92,7 +92,7 @@
                 this.errorMsg = 'The email address or password is missing.'
                 return
             }
-    
+
             var self = this
 
             userWebservice.login(this.user.email, this.user.password).then(function (response) {

@@ -9,7 +9,6 @@
               <img class="login-image" src="img/gifs/Satura_power.gif">
               
             </figure>
-            <form>
                 <div class="field">
                     <p class="control has-icons-left has-icons-right">
                         <input required v-model.lazy="user.firstname"  id="login_firstname" name="firstname" class="input" type="text" placeholder="First name">
@@ -64,7 +63,6 @@
                 </div>
 
               <button class="button is-block is-primary is-large is-fullwidth" v-on:click="register()" @keyup.enter="register" :disabled="disabled">Sign up</button>
-            </form>
           </div>
             <!-- <div class="form-group">
                 <span id="errorMsg" style="color:red; font-weight: 600">{{errorMsg}}<br/></span>
