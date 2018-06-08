@@ -1,38 +1,44 @@
 <template>
 <div class="columns is-mobile">
-    <div class="column is-6-desktop is-offset-3-desktop is-8-tablet is-offset-2-tablet is-10-mobile is-offset-1-mobile">
-        <br/>
-        <h2 class="subtitle">Login</h2>
-        <div class="field">
-            <p class="control has-icons-left has-icons-right">
-                <input required v-model.lazy="user.email" id="login_email" name="email" class="input" type="email" placeholder="Email">
-                <span class="icon is-small is-left">
-                  <i class="fa fa-envelope"></i>
-                </span>
-            </p>
-        </div>
-        <div class="field">
-            <p class="control has-icons-left">
-                <input required v-model.lazy="user.password" id="password" class="input" type="password" placeholder="Passwort">
-                <span class="icon is-small is-left">
-                  <i class="fa fa-lock"></i>
-                </span>
-            </p>
-        </div>
-        <div class="field">
-            <p class="control">
-                <button class="button is-success is-fullwidth" v-on:click="login()" @keyup.enter="login" :disabled="disabled">
-                  Login
-                </button>
-            </p>
-             <br/>
-               <p> Noch kein Account? <router-link class="button is-light is-fullwidth" to="/auth/register?type=organisation">Registrieren</router-link></p>
-        </div>
+    
+    <div class="column is-4-desktop is-offset-4-desktop is-8-tablet is-offset-2-tablet is-12-mobile ">
+          <h3 class="title has-text-grey">Login</h3>
+          <p class="subtitle has-text-grey">Please login to unlock teh 1337 Power</p>
+          <div class="box">
+            <figure class="avatar">
+              <!-- <img src="img/icons/apple-touch-icon-114x114.png"> -->
+              <!-- <img class="login-image" src="img/gifs/Sharingan.gif"> -->
+              <!-- <img class="login-image" src="img/gifs/flame.gif"> -->
+              <!-- <img class="login-image" src="img/gifs/codegeass.gif"> -->
+              <img class="login-image" src="img/gifs/Satura_power.gif">
+              
+            </figure>
+            <form>
+              <div class="field">
+                <div class="control">
+                  <input class="input is-large" v-model.lazy="user.email"  id="login_email" name="email" type="email" placeholder="Your Email" autofocus="">
+                </div>
+              </div>
 
-        <div class="form-group">
-            <span id="errorMsg" style="color:red; font-weight: 600">{{errorMsg}}</span>
-        </div>
+              <div class="field">
+                <div class="control">
+                  <input class="input is-large" v-model.lazy="user.password" id="login_password" type="password" placeholder="Your Password">
+                </div>
+              </div>
+      
+              <button class="button is-block is-primary is-large is-fullwidth" v-on:click="login()" @keyup.enter="login" :disabled="disabled">Login</button>
+            </form>
+          </div>
+            <div class="form-group">
+                <span id="errorMsg" style="color:red; font-weight: 600">{{errorMsg}}<br/></span>
+            </div>
+          <p class="has-text-grey">
+            <router-link to="/auth/register">Sign Up</router-link> &nbsp;·&nbsp;
+            <router-link to="/contactUs">Forgot Password</router-link> &nbsp;·&nbsp;
+            <router-link to="/contactUs">Need Help?</router-link>
+          </p>
     </div>
+
 </div>
 </template>
 
@@ -114,5 +120,47 @@
 </script>
 
 <style scoped>
+html,body {
+  font-family: 'Open Sans', serif;
+  font-size: 14px;
+  font-weight: 300;
+}
+.hero.is-success {
+  background: #F2F6FA;
+}
+.hero .nav, .hero.is-success .nav {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.box {
+  margin-top: 5rem;
+}
+.avatar {
+  margin-top: -70px;
+  padding-bottom: 20px;
+}
+.avatar img {
+  padding: 5px;
+  background: #fff;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+  box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
+}
+.login-image {
+    height: 150px;
+    width: 150px;
+}
+.login-image:hover {
+    transform: scale(20);
+}
 
+input {
+  font-weight: 300;
+}
+p {
+  font-weight: 700;
+}
+p.subtitle {
+  padding-top: 1rem;
+}
 </style>

@@ -5,7 +5,7 @@
                 <div class="container">
                     <div class="navbar-brand">
                         <router-link class="navbar-item" to="/">
-                            <img src="./../assets/epicschool_logo.png" alt="Logo">
+                            <img src="./../assets/epicschool_logo_2.png" alt="Logo">
                         </router-link>
                         <span class="navbar-burger burger" data-target="navbarMenu">
                             <span></span>
