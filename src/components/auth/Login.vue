@@ -95,8 +95,8 @@
                 this.errorMsg = 'Please enter a valid e-mail address.'
                 return 0;
             } 
-
-            var self = this
+            let self = this
+            self.disabled = true;
 
             userWebservice.login(this.user.email, this.user.password).then(function (response) {
                 self.errorMsg = '';
@@ -108,6 +108,7 @@
                 })
             }).catch(function (error) {
                 self.errorMsg = 'The E-Mail or Password is incorrect'
+                self.disabled = false;
                 console.log(error)
             })
         }
