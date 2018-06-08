@@ -35,11 +35,11 @@ class UserWebservice {
     }
 
     public getUserInfo() {
-        return axios.get('/userinfo');
+        return axios.get('/auth/userinfo');
     }
 
     public changeNameAndAddress(user:User) {
-        return axios.post('account/updateNameAndAddress', {
+        return axios.post('/auth/changeNameAndAddress', {
             firstname: user.firstname,
             lastname: user.lastname,
             address : user.address,
@@ -51,13 +51,13 @@ class UserWebservice {
     }
 
     public changeEmail(new_email:string) {
-        return axios.post('account/updateEmail', {
+        return axios.post('/auth/changeEmail', {
             new_email: new_email,
         });
     }
 
     public changePassword(current_password:string,new_password: string) {
-        return axios.post('account/updatePassword', {
+        return axios.post('/auth/changePassword', {
             current_password: current_password,
             new_password: new_password,
         });
