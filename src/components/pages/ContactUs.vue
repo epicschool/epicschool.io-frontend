@@ -4,7 +4,7 @@
             <div class="columns is-vcentered">
                 <div class="column is-5">
                     <figure class="image is-4by3">
-                        <img src="https://picsum.photos/800/600/?random" alt="Description">
+                        <img src="img/letsTalk.jpg" alt="Description">
                     </figure>
                 </div>
                 <div class="column is-6 is-offset-1">
