@@ -7,7 +7,7 @@
                         <router-link class="navbar-item" to="/">
                             <img src="./../assets/epicschool_logo_2.png" alt="Logo">
                         </router-link>
-                        <span class="navbar-burger burger" data-target="navbarMenu">
+                        <span class="navbar-burger burger" v-on:click="toggleNavBar()" data-target="navbarMenu">
                             <span></span>
                             <span></span>
                             <span></span>
@@ -29,6 +29,16 @@
                                     <router-link  class="navbar-item" to="/contactUs">Contact us</router-link>
                                 </li>
         
+                                <li>
+                                    <router-link v-if="loggedIn" class="navbar-item" to="/account"> Account &nbsp;<i class="fa fa-cog"></i></router-link>
+                                </li>
+
+                                <li>
+                                    <router-link v-if="!loggedIn" class="navbar-item" to="/auth/register">Sign up</router-link>
+                                </li>
+                                <li>
+                                    <router-link v-if="loggedIn" class="navbar-item" to="/auth/logout">Sign out</router-link>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -44,47 +54,40 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import  Footer  from './Footer.vue';
+    import { Component, Prop, Vue } from 'vue-property-decorator';
+    import  Footer  from './Footer.vue';
+    import { Getter } from 'vuex-class'
 
-@Component({
-  components: {
-    Footer,
-  },
-})
-export default class Main extends Vue {
+    @Component({
+    components: {
+        Footer,
+    },
+    })
+    export default class Main extends Vue {
             protected activeMenu:String = ''
 
-        mounted() {
-            this.bulmaNavbar();
-        }
+            @Getter('account/loggedIn') loggedIn
+            @Getter('account/isEmailConfirmed') isEmailConfirmed
+            @Getter('account/currentUser') currentUser
 
-        bulmaNavbar() {
-            document.addEventListener('DOMContentLoaded', function() {
+            mounted() {
+               
+            }
 
-                // Get all "navbar-burger" elements
-                var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-
-                // Check if there are any navbar burgers
-                if ($navbarBurgers.length > 0) {
-                    // Add a click event on each of them
-                    $navbarBurgers.forEach(function($el) {
-                        $el.addEventListener('click', function() {
-
-                            // Get the target from the "data-target" attribute
-                            var target = $el.dataset.target;
-                            target = document.getElementById(target);
-
-                            // Toggle the class on both the "navbar-burger" and the "navbar-menu"
-                            $el.classList.toggle('is-active');
-                            target.classList.toggle('is-active');
-                        });
-                    });
+            toggleNavBar(){
+                console.log('toggling navbar')
+                let active = "is-active"
+                var element = document.getElementById("navbarMenu")
+                // element.classList returns an array of element class names
+                // we check if it contains "is-active" we remove it else we add it
+                // console.log(element.classList)
+                if (element!.classList.contains(active)) {
+                    element!.classList.remove(active)       
+                } else {
+                    element!.classList.add(active)    
                 }
-
-            });
-        }
-}
+            }
+    }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
