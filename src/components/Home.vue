@@ -1,24 +1,25 @@
 <template>
     <div class="hero-body">
         <div class="container has-text-centered">
-            <div class="columns is-vcentered">
-                <div class="column is-5">
+            <div class="columns is-multiline is-vcentered">
+                <div class="column is-8">
                     <figure class="image is-4by3">
-                        <img src="https://picsum.photos/800/600/?random" alt="Description">
+                        <img src="img/sci_fi_classroom_2.jpg" alt="Description">
                     </figure>
                 </div>
-                <div class="column is-6 is-offset-1">
-                    <h1 class="title is-2">
-                      Home
-                    </h1>
-                    <h2 class="subtitle is-4">
-                       desc
-                    </h2>
+                <div class="column is-3 is-offset-1">
+                    <div class="title is-3">
+                        Welcome to Epic School
+                    </div>
+                    <div class="subtitle is-4">
+                      Epicschool is about learning epic things
+                       
+                    </div>
                     <br>
                     <p class="has-text-centered">
-                        <a class="button is-medium is-info is-outlined">
-                        Learn more
-                        </a>
+                        <!-- <router-link  class="button is-medium is-info is-outlined" to="/"><span >Learn more</span></router-link> -->
+                        <router-link  class="button is-medium is-success is-outlined" to="/Courses"><span >Check out our Courses</span></router-link>
+                        
                     </p>
                 </div>
             </div>
