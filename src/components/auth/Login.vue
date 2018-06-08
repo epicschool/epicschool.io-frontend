@@ -79,7 +79,7 @@
     
         // Mounted is called initially
         mounted() {
-            console.log('This is called on mounted')
+            // console.log('This is called on mounted')
             this.event_id = this.$route.query.hasOwnProperty('event_id')?this.$route.query.event_id:''
             this.action = this.$route.query.hasOwnProperty('action')?this.$route.query.action:''
         }
