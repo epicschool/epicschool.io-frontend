@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "71fd5a84964b48e1923794c41ce25c36",
-    "url": "/img/courses/vue1.png"
+    "revision": "002474823d306f1f7557fc6051189f5a",
+    "url": "/img/courses/vue3.png"
   },
   {
     "revision": "9fd46b98f417bb0ffb9c052e70cead14",
@@ -12,16 +12,16 @@ self.__precacheManifest = [
     "url": "/service-worker.js"
   },
   {
-    "revision": "ac667454082f327fb2b5",
-    "url": "/js/app.ac667454.js"
-  },
-  {
-    "revision": "a69a8fb5782d83c87d640525968ff373",
-    "url": "/img/sci-fi-castle-in-the-light.jpg"
+    "revision": "f10c765072dc47321523",
+    "url": "/js/app.f10c7650.js"
   },
   {
     "revision": "bc66163ea1e6e40a83770a57e56eb4af",
     "url": "/img/team/mark.png"
+  },
+  {
+    "revision": "a69a8fb5782d83c87d640525968ff373",
+    "url": "/img/sci-fi-castle-in-the-light.jpg"
   },
   {
     "revision": "06723ab91873b2b90eec6f67b9375ef0",
@@ -40,7 +40,7 @@ self.__precacheManifest = [
     "url": "/img/sci_fi_classroom_2.jpg"
   },
   {
-    "revision": "98961f4f5b1af4a9012a701195b1e105",
+    "revision": "3a49ea908878340ae5ac290baa8d77ea",
     "url": "/index.html"
   },
   {
@@ -64,12 +64,12 @@ self.__precacheManifest = [
     "url": "/js/chunk-vendors.d3ef62d0.js"
   },
   {
-    "revision": "0514d435032aec9bcd499e1e1220897e",
-    "url": "/img/courses/3d.png"
-  },
-  {
     "revision": "a28d60993fcd43aa707d701b2c149731",
     "url": "/img/courses/helloworld.jpg"
+  },
+  {
+    "revision": "1f08c9c67bef956926bae15793926ea7",
+    "url": "/img/courses/csharp.jpg"
   },
   {
     "revision": "b3a406974b3dfd9826a2dbc756d515a1",
@@ -84,6 +84,10 @@ self.__precacheManifest = [
     "url": "/img/fontawesome-webfont.912ec66d.svg"
   },
   {
+    "revision": "71fd5a84964b48e1923794c41ce25c36",
+    "url": "/img/courses/vue1.png"
+  },
+  {
     "revision": "1f8b899c242e01f225a8919e93361f7f",
     "url": "/img/courses/vue2.jpeg"
   },
@@ -92,20 +96,16 @@ self.__precacheManifest = [
     "url": "/img/courses/vuewithlaravel.png"
   },
   {
-    "revision": "002474823d306f1f7557fc6051189f5a",
-    "url": "/img/courses/vue3.png"
-  },
-  {
     "revision": "883b3b5a905bd87eb72117f35a915dec",
     "url": "/img/courses/webdesign.jpg"
   },
   {
-    "revision": "073cf0e58f1a5b8f8b1bded8846bc1c0",
-    "url": "/img/gifs/codegeass.gif"
-  },
-  {
     "revision": "468dcce53f4075162557cf79f3771506",
     "url": "/img/gifs/eye.gif"
+  },
+  {
+    "revision": "073cf0e58f1a5b8f8b1bded8846bc1c0",
+    "url": "/img/gifs/codegeass.gif"
   },
   {
     "revision": "00959572c5b86749b3dc4f91dba9d176",
@@ -120,20 +120,20 @@ self.__precacheManifest = [
     "url": "/img/gifs/Satura_power.gif"
   },
   {
-    "revision": "70df66e9356072ce3d1ddf27a3d61ce9",
-    "url": "/img/epicschool_logo_2.70df66e9.png"
-  },
-  {
     "revision": "1782af90c04471ff7aefd1752fc6aed7",
     "url": "/img/courses/gamemaker.jpg"
   },
   {
-    "revision": "1f08c9c67bef956926bae15793926ea7",
-    "url": "/img/courses/csharp.jpg"
+    "revision": "70df66e9356072ce3d1ddf27a3d61ce9",
+    "url": "/img/epicschool_logo_2.70df66e9.png"
   },
   {
     "revision": "9e725b0548fb9cbd569b4eed85a7e495",
     "url": "/img/courses/code.jpg"
+  },
+  {
+    "revision": "0514d435032aec9bcd499e1e1220897e",
+    "url": "/img/courses/3d.png"
   },
   {
     "revision": "fee66e712a8a08eef5805a46892932ad",
@@ -160,7 +160,7 @@ self.__precacheManifest = [
     "url": "/css/chunk-vendors.3dda5bf8.css"
   },
   {
-    "revision": "ac667454082f327fb2b5",
+    "revision": "f10c765072dc47321523",
     "url": "/css/app.b385916b.css"
   }
 ];

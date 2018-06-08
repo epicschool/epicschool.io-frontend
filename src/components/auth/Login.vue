@@ -91,7 +91,10 @@
             if(this.user.email === '' || this.user.password === '') {
                 this.errorMsg = 'The email address or password is missing.'
                 return
-            }
+            } else if (!this.validateEmail(this.user.email)) {
+                this.errorMsg = 'Please enter a valid e-mail address.'
+                return 0;
+            } 
 
             var self = this
 
@@ -110,11 +113,12 @@
         }
 
         redirect(){
-            if(this.action == 'payment' && this.event_id != ''){
-                this.$router.push({ path: '/events/payment?event_id=' + this.event_id })
-            } else {
-                this.$router.push({ path: '/' })
-            }
+            this.$router.push({ path: '/' })
+        }
+
+        validateEmail(email) {
+            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email.toLowerCase());
         }
     }
 </script>

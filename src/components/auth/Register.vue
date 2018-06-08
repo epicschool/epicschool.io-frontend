@@ -143,7 +143,10 @@ export default class Register extends Vue {
 
                 userWebservice.getUserInfo().then(function (response) {
                     self.$store.commit('account/setCurrentUser', response.data)
+                    self.redirect();
                 })
+
+
             }).catch(function (error) {
                 self.disabled = false;
 
@@ -160,23 +163,10 @@ export default class Register extends Vue {
         }
     }
 
-    login() {
-        let self = this
-
-        userWebservice.login(this.user.email, this.user.password).then(function (response) {
-            self.errorMsg = '';
-            self.$store.commit('account/setApiToken', response.data.api_token)
-
-            userWebservice.getUserInfo().then(function (response) {
-                self.$store.commit('account/setCurrentUser', response.data)
-                self.$router.push({ path: '/' })
-            })
-        }).catch(function (error) {
-            console.log(error)
-        })
+    redirect(){
+        this.$router.push({ path: '/' })
     }
 
-    
     validateEmail(email) {
         var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email.toLowerCase());
