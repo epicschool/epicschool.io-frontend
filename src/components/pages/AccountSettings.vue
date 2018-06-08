@@ -223,6 +223,7 @@
 
     import { User } from '../../models/user';
     import { userWebservice } from '../../webservices/user' 
+    import toast from 'buefy'
 
     @Component({
         name:'AccountSettings',
