@@ -1,5 +1,5 @@
 module.exports = {
   pwa: {
-    name: 'epicschool.io website'
+    name: 'epicschool.io'
   }
 }
