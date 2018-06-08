@@ -46,7 +46,7 @@
                         <i class="fa fa-lock"></i>
                         </span>
                         <span v-if="errorMsg=='password'" class="help is-danger">please enter a password</span> 
-                        <span v-if="errorMsg=='passwords_not_same'" class="help is-danger">Passwords do not match</span> 
+                        <span v-if="errorMsg=='passwords_not_same'" class="help is-danger">The passwords are not identical</span> 
                         <span v-if="errorMsg=='passwordNotValid'" class="help is-danger">The password must be at least 8 characters long</span>
                     </p>
                 </div>
@@ -58,7 +58,7 @@
                         <i class="fa fa-lock"></i>
                         </span>
                         <span v-if="errorMsg=='password_confirmation'" class="help is-danger">Please confirm your password</span> 
-                        <span v-if="errorMsg=='passwords_not_same'" class="help is-danger">Passwords do not match</span> 
+                        <span v-if="errorMsg=='passwords_not_same'" class="help is-danger">The passwords are not identical</span> 
                     </p>
                 </div>
 
@@ -153,7 +153,7 @@ export default class Register extends Vue {
                 }
 
                 // Check if password was not 
-                if(error.response && error.response.data && error.response.data.password == "The password must be at least 8 characters.") {
+                if(error.response && error.response.data && error.response.data.password == "The password must be at least 8 characters long") {
                     self.errorMsg = "passwordNotValid"
                 }
             })
