@@ -48,31 +48,6 @@ class UserWebservice {
         });
     }
 
-    public changeNameAndAddress(user: User) {
-        return axios.post('/auth/changeNameAndAddress', {
-            firstname: user.firstname,
-            lastname: user.lastname,
-            address : user.address,
-            address_addition: user.address_addition,
-            postcode : user.postcode,
-            city : user.city,
-            country : user.country,
-        });
-    }
-
-    public changeEmail(newEmail: string) {
-        return axios.post('/auth/changeEmail', {
-            new_email: newEmail,
-        });
-    }
-
-    public changePassword(currentPassword: string, newPassword: string) {
-        return axios.post('/auth/changePassword', {
-            current_password: currentPassword,
-            new_password: newPassword,
-        });
-    }
-
     public confirmEmail(emailConfirmationToken: string) {
         return axios.post('/auth/emailConfirmation', {
             email_confirmation_token: emailConfirmationToken,
