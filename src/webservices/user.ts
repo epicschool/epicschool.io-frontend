@@ -38,6 +38,16 @@ class UserWebservice {
         return axios.get('/auth/userinfo');
     }
 
+    public changeAccountInfo(user: User) {
+        return axios.post('/auth/changeAccountInfo', {
+            firstname: user.firstname,
+            lastname: user.lastname,
+            email: user.email,
+            current_password: user.password,
+            new_password: user.new_password,
+        });
+    }
+
     public changeNameAndAddress(user: User) {
         return axios.post('/auth/changeNameAndAddress', {
             firstname: user.firstname,

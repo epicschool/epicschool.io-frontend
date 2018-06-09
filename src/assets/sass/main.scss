@@ -10,12 +10,39 @@
 // Set your colors
 $primary: #932290;
 $primary-invert: findColorInvert($primary);
+
 $twitter: #4099FF;
 $twitter-invert: findColorInvert($twitter);
+
+$gunmetal: #303237;
+$gunmetal-invert: findColorInvert($gunmetal);
+
+$light-gray: #36393f;
+$light-gray-invert: findColorInvert($light-gray);
+
+$dark-gray: #2b2d31;
+$dark-gray-invert: findColorInvert($dark-gray);
+
+
 // $warning: $primary;
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
-$colors: ( "white": ($white, $black), "black": ($black, $white), "light": ($light, $light-invert), "dark": ($dark, $dark-invert), "primary": ($primary, $primary-invert), "info": ($info, $info-invert), "success": ($success, $success-invert), "warning": ($warning, $warning-invert), "danger": ($danger, $danger-invert), "twitter": ($twitter, $twitter-invert));
+$colors: ( 
+            "white": ($white, $black),
+            "black": ($black, $white),
+            "light": ($light, $light-invert),
+            "dark": ($dark, $dark-invert),
+            "primary": ($primary, $primary-invert),
+            "info": ($info, $info-invert),
+            "success": ($success, $success-invert),
+            "warning": ($warning, $warning-invert),
+            "danger": ($danger, $danger-invert),
+            "twitter": ($twitter, $twitter-invert),
+            "gunmetal": ($gunmetal, $gunmetal-invert),
+            "light-gray": ($light-gray, $light-gray-invert),
+            "dark-gray": ($dark-gray, $dark-gray-invert),
+         
+         );
 // Links
 $link: $primary;
 $link-invert: $primary-invert;
