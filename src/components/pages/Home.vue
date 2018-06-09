@@ -12,7 +12,7 @@
                         Welcome to Epic School
                     </div>
                     <div class="subtitle is-4">
-                      Epicschool is about learning epic things
+                      it's all about learning epic things
                        
                     </div>
                     <br>

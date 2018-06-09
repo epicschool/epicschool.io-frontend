@@ -11,18 +11,18 @@ interface State {
 }
 
 const mutations: MutationTree<State> = {
-    setCurrentUser: (state, currentUser) => (state.currentUser = currentUser),
-    setApiToken: (state, apiToken) => {
+    setCurrentUser: (currentState, currentUser) => (currentState.currentUser = currentUser),
+    setApiToken: (currentState, apiToken) => {
         // Update the local storage by hand
         localStorage.removeItem('api_token');
         localStorage.setItem('api_token', apiToken);
-        axios.defaults.headers.common['Authorization'] = 'Bearer '.concat(apiToken);
-        state.loggedIn = true;
+        axios.defaults.headers.common.Authorization = 'Bearer '.concat(apiToken);
+        currentState.loggedIn = true;
     },
 
-    logout: (state) => {
-        state.loggedIn = false;
-        state.currentUser = {
+    logout: (currentState) => {
+        currentState.loggedIn = false;
+        currentState.currentUser = {
             id: 0,
             firstname: '',
             lastname: '',
@@ -47,7 +47,7 @@ const mutations: MutationTree<State> = {
         // acquire initial state
         const s = initialState();
 
-        Object.keys(s).forEach(key => {
+        Object.keys(s).forEach((key) => {
             state[key] = s[key];
         });
     },
@@ -58,16 +58,16 @@ const actions: ActionTree < State, any > = {
 };
 
 const getters = {
-    currentUser(state: State) {
-        return state.currentUser;
+    currentUser(currentState: State) {
+        return currentState.currentUser;
     },
 
-    loggedIn(state: State): boolean {
-        return state.loggedIn;
+    loggedIn(currentState: State): boolean {
+        return currentState.loggedIn;
     },
 
-    isEmailConfirmed(state: State): boolean {
-        return state.currentUser.email_confirmed;
+    isEmailConfirmed(currentState: State): boolean {
+        return currentState.currentUser.email_confirmed;
     },
 
 };
@@ -92,16 +92,16 @@ function initialState() {
             city: '',
             country: '',
         },
-    };}
+    }; }
 
-const state: State = initialState()
+const state: State = initialState();
 
 const module = {
     namespaced: true,
     state,
     getters,
     mutations,
-    actions
+    actions,
 };
 
 export default module;

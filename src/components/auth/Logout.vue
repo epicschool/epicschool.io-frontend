@@ -28,7 +28,7 @@
 
         // Mounted is called initially
         mounted() {
-            console.log('Logout Mounted')
+            console.log('Logout called')
             this.logout();
         }
     

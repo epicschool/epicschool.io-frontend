@@ -1,33 +1,29 @@
 import Vue from 'vue';
-import Vuex, { MutationTree, ActionTree, } from 'vuex';
+import Vuex, { MutationTree, ActionTree } from 'vuex';
 
 Vue.use(Vuex);
 
-interface State {
-    
-}
+const mutations: MutationTree<{}> = {
 
-const mutations: MutationTree<State> = {
-    
 };
 
-const actions: ActionTree < State, any > = {
+const actions: ActionTree < {}, any > = {
     RESET({ commit }) {
         commit('account/resetState', null, {root: true});
-        commit('settings/resetState', null, {root: true});
+        // commit('settings/resetState', null, {root: true});
 
         // Clear also the local storage
         localStorage.clear();
-    }
+    },
 };
 
 const getters = {
 
 };
 
-const state: State = {
+const state: {} = {
 
-}
+};
 
 const module = {
     namespaced: true,
