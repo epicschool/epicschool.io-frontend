@@ -2,10 +2,10 @@
     <div class="columns is-mobile">
         <div class="column is-6-desktop is-offset-3-desktop is-8-tablet is-offset-2-tablet is-10-mobile is-offset-1-mobile">
             <br/>
-            <h2 class="subtitle">Abmelden</h2>
+            <h2 class="subtitle">Signing out</h2>
             <div>
                 <p>
-                   Benutzer wird abgemeldet..
+                    
                 </p>
             </div>
         </div>
@@ -41,7 +41,7 @@
                 self.reset()
 
                 setTimeout(() => {
-                    self.$router.push({ path: '/auth/login' })
+                    self.$router.push({ path: '/' })
                 }, 300);
             }).catch(function (error) {
                 console.log(error)

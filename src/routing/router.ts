@@ -9,6 +9,9 @@ import ContactUs from '@/components/pages/ContactUs.vue';
 import Team from '@/components/pages/Team.vue';
 import Courses from '@/components/pages/Courses.vue';
 import AccountSettings from '@/components/pages/AccountSettings.vue';
+import Survey from '@/components/pages/Survey.vue';
+
+
 
 import Auth from '@/components/Auth.vue';
 import Login from '@/components/auth/Login.vue';
@@ -57,6 +60,11 @@ export default new Router({
                 name: 'AccountSettings',
                 component: AccountSettings,
             },
+            {
+                path: 'survey',
+                name: 'Survey',
+                component: Survey,
+            }
         ],
     },
     {

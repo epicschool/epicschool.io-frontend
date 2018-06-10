@@ -3,7 +3,7 @@
         <div class="container">
             <div class="tabs is-centered">
                 <ul>
-                    <li><a href="https://epicschool.io/"><b>(▀̿Ĺ̯▀̿ ̿) ©2018 Epicschool </b></a></li>
+                    <li><a :href="APP_BASE_URL"><b>(▀̿Ĺ̯▀̿ ̿) ©2018 Epicschool </b></a></li>
                 </ul>
             </div>
         </div>
