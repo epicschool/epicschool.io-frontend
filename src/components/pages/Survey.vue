@@ -25,37 +25,37 @@
     import { Getter } from 'vuex-class'
 
     import { User } from '../../models/user';
-    import { userWebservice } from '../../webservices/user' 
-    import toast from 'buefy'
+    import { userWebservice } from '../../webservices/user';
+    import toast from 'buefy';
 
     @Component({
-        name:'Survey',
+        name: 'Survey',
         components: {
 
-        }
+        },
     })
 
     export default class Survey extends Vue {
 
-        @Getter('account/currentUser') currentUser
-        
+        @Getter('account/currentUser') private currentUser;
+
         // Mounted is called initially
-        mounted() {
+        // mounted() {
 
-        }
+        // }
 
-        validateEmail(email) {
-            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        private validateEmail(email) {
+            // tslint:disable-next-line:max-line-length
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email.toLowerCase());
         }
 
-        updateUserInfo() {
-            let self = this;
-            userWebservice.getUserInfo().then(function (response) {
-                self.$store.commit('account/setCurrentUser', response.data)
-            })
+        private updateUserInfo() {
+            const self = this;
+            userWebservice.getUserInfo().then(function(response) {
+                self.$store.commit('account/setCurrentUser', response.data);
+            });
         }
-
     }
 </script>
 
