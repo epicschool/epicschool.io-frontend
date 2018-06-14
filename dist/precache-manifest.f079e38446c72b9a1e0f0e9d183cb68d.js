@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "71fd5a84964b48e1923794c41ce25c36",
-    "url": "/img/courses/vue1.png"
+    "revision": "3ffaab9e2d2710fcaf3b9cc032744f43",
+    "url": "/img/courses/unity_game_engine.jpg"
   },
   {
     "revision": "9fd46b98f417bb0ffb9c052e70cead14",
@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/service-worker.js"
   },
   {
-    "revision": "e22980469dc2759b1f7d",
-    "url": "/js/app.e2298046.js"
+    "revision": "f5216373b35ddd1e3f2d",
+    "url": "/js/app.f5216373.js"
   },
   {
     "revision": "bc66163ea1e6e40a83770a57e56eb4af",
@@ -28,20 +28,24 @@ self.__precacheManifest = [
     "url": "/img/team/majed.png"
   },
   {
-    "revision": "ff18ba19e791abf2576f13e74e807932",
-    "url": "/img/sci_fi_classroom.jpg"
-  },
-  {
     "revision": "636e410b58ce11c916dd50d6b2f4a044",
     "url": "/img/sci_fi_classroom.png"
+  },
+  {
+    "revision": "ff18ba19e791abf2576f13e74e807932",
+    "url": "/img/sci_fi_classroom.jpg"
   },
   {
     "revision": "508ff804229c6ce3ce1b8f39a886eea5",
     "url": "/img/sci_fi_classroom_2.jpg"
   },
   {
-    "revision": "4c81062253908cceea51d6a10f78f59a",
+    "revision": "be83b4ebdb5473541b1a0f554f2dff13",
     "url": "/index.html"
+  },
+  {
+    "revision": "e7ddd391a948f88c77e5a7fb78f44045",
+    "url": "/img/logo_100x35.png"
   },
   {
     "revision": "c42942a4b7349a1f9bcc0c875edd2665",
@@ -64,12 +68,16 @@ self.__precacheManifest = [
     "url": "/js/chunk-vendors.d3ef62d0.js"
   },
   {
-    "revision": "0514d435032aec9bcd499e1e1220897e",
-    "url": "/img/courses/3d.png"
+    "revision": "00959572c5b86749b3dc4f91dba9d176",
+    "url": "/img/gifs/Sharingan.gif"
   },
   {
     "revision": "a28d60993fcd43aa707d701b2c149731",
     "url": "/img/courses/helloworld.jpg"
+  },
+  {
+    "revision": "2f9cf63aadfd79c1aa880aaf697064dd",
+    "url": "/img/courses/laravel.jpg"
   },
   {
     "revision": "b3a406974b3dfd9826a2dbc756d515a1",
@@ -82,6 +90,10 @@ self.__precacheManifest = [
   {
     "revision": "912ec66d7572ff821749319396470bde",
     "url": "/img/fontawesome-webfont.912ec66d.svg"
+  },
+  {
+    "revision": "71fd5a84964b48e1923794c41ce25c36",
+    "url": "/img/courses/vue1.png"
   },
   {
     "revision": "1f8b899c242e01f225a8919e93361f7f",
@@ -108,36 +120,40 @@ self.__precacheManifest = [
     "url": "/img/gifs/eye.gif"
   },
   {
-    "revision": "00959572c5b86749b3dc4f91dba9d176",
-    "url": "/img/gifs/Sharingan.gif"
+    "revision": "70df66e9356072ce3d1ddf27a3d61ce9",
+    "url": "/img/epicschool_logo_2.70df66e9.png"
   },
   {
-    "revision": "2f9cf63aadfd79c1aa880aaf697064dd",
-    "url": "/img/courses/laravel.jpg"
+    "revision": "535e92c65ddaff1a55f11df10c680c75",
+    "url": "/img/courses/javascript.jpg"
   },
   {
     "revision": "09cfe3cd7b8cf6f149039cc23ebd2dcf",
     "url": "/img/gifs/Satura_power.gif"
   },
   {
-    "revision": "70df66e9356072ce3d1ddf27a3d61ce9",
-    "url": "/img/epicschool_logo_2.70df66e9.png"
+    "revision": "fee66e712a8a08eef5805a46892932ad",
+    "url": "/fonts/fontawesome-webfont.fee66e71.woff"
   },
   {
-    "revision": "1782af90c04471ff7aefd1752fc6aed7",
-    "url": "/img/courses/gamemaker.jpg"
-  },
-  {
-    "revision": "1f08c9c67bef956926bae15793926ea7",
-    "url": "/img/courses/csharp.jpg"
+    "revision": "0514d435032aec9bcd499e1e1220897e",
+    "url": "/img/courses/3d.png"
   },
   {
     "revision": "9e725b0548fb9cbd569b4eed85a7e495",
     "url": "/img/courses/code.jpg"
   },
   {
-    "revision": "fee66e712a8a08eef5805a46892932ad",
-    "url": "/fonts/fontawesome-webfont.fee66e71.woff"
+    "revision": "1782af90c04471ff7aefd1752fc6aed7",
+    "url": "/img/courses/gamemaker.jpg"
+  },
+  {
+    "revision": "c41faa1ca1671d3be9b2e0fc81255bbd",
+    "url": "/img/courses/gamedevelopment.jpg"
+  },
+  {
+    "revision": "1f08c9c67bef956926bae15793926ea7",
+    "url": "/img/courses/csharp.jpg"
   },
   {
     "revision": "b06871f281fee6b241d60582ae9369b9",
@@ -160,7 +176,7 @@ self.__precacheManifest = [
     "url": "/css/chunk-vendors.3dda5bf8.css"
   },
   {
-    "revision": "e22980469dc2759b1f7d",
-    "url": "/css/app.b385916b.css"
+    "revision": "f5216373b35ddd1e3f2d",
+    "url": "/css/app.c045a4ca.css"
   }
 ];

@@ -13,7 +13,6 @@ class UserWebservice {
      */
     public login(email: string, password: string) {
         return axios.post('/auth/login', {
-            grant_type: 'password',
             email,
             password,
         });
@@ -21,7 +20,6 @@ class UserWebservice {
 
     public register(user: User) {
         return axios.post('/auth/register', {
-            grant_type: 'password',
             firstname: user.firstname,
             lastname: user.lastname,
             email: user.email,
@@ -38,28 +36,13 @@ class UserWebservice {
         return axios.get('/auth/userinfo');
     }
 
-    public changeNameAndAddress(user: User) {
-        return axios.post('/auth/changeNameAndAddress', {
+    public changeAccountInfo(user: User) {
+        return axios.post('/auth/changeAccountInfo', {
             firstname: user.firstname,
             lastname: user.lastname,
-            address : user.address,
-            address_addition: user.address_addition,
-            postcode : user.postcode,
-            city : user.city,
-            country : user.country,
-        });
-    }
-
-    public changeEmail(newEmail: string) {
-        return axios.post('/auth/changeEmail', {
-            new_email: newEmail,
-        });
-    }
-
-    public changePassword(currentPassword: string, newPassword: string) {
-        return axios.post('/auth/changePassword', {
-            current_password: currentPassword,
-            new_password: newPassword,
+            email: user.email,
+            current_password: user.password,
+            new_password: user.new_password,
         });
     }
 

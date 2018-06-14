@@ -28,7 +28,11 @@
                                 <li>
                                     <router-link  class="navbar-item" to="/contactUs">Contact us</router-link>
                                 </li>
-        
+
+                                <li>
+                                  <router-link  v-if="false"  class="navbar-item" to="/survey"> Survey </router-link>
+                                </li>
+                                
                                 <li>
                                     <router-link v-if="loggedIn" class="navbar-item" to="/account"> Account &nbsp;<i class="fa fa-cog"></i></router-link>
                                 </li>

@@ -9,11 +9,17 @@ import ContactUs from '@/components/pages/ContactUs.vue';
 import Team from '@/components/pages/Team.vue';
 import Courses from '@/components/pages/Courses.vue';
 import AccountSettings from '@/components/pages/AccountSettings.vue';
+import Survey from '@/components/pages/Survey.vue';
+
+
 
 import Auth from '@/components/Auth.vue';
 import Login from '@/components/auth/Login.vue';
 import Logout from '@/components/auth/Logout.vue';
 import Register from '@/components/auth/Register.vue';
+
+import PrivacyPolicy from '@/views/PrivacyPolicy.vue';
+import TermsOfService from '@/views/TermsOfService.vue';
 
 Vue.use(Router);
 
@@ -57,6 +63,21 @@ export default new Router({
                 name: 'AccountSettings',
                 component: AccountSettings,
             },
+            {
+                path: 'survey',
+                name: 'Survey',
+                component: Survey,
+            },
+            {
+                path: '/PrivacyPolicy',
+                name: 'PrivacyPolicy',
+                component: PrivacyPolicy,
+            },
+            {
+                path: '/TermsOfService',
+                name: 'TermsOfService',
+                component: TermsOfService,
+            },
         ],
     },
     {
@@ -82,8 +103,6 @@ export default new Router({
                 name: 'register',
                 component: Register,
             },
-
-
         ],
     },
 

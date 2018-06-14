@@ -3,7 +3,15 @@
         <div class="container">
             <div class="tabs is-centered">
                 <ul>
-                    <li><a href="https://epicschool.io/"><b>(▀̿Ĺ̯▀̿ ̿) ©2018 Epicschool </b></a></li>
+                    <li>
+                        <a :href="APP_BASE_URL"><b>(▀̿Ĺ̯▀̿ ̿) ©2018 Epicschool </b></a>
+                    </li>
+                    <li>
+                        <router-link  class="navbar-item" to="/PrivacyPolicy">Privacy Policy</router-link>
+                    </li>
+                    <li>
+                        <router-link  class="navbar-item" to="/TermsOfService">Terms of Service</router-link>
+                    </li>
                 </ul>
             </div>
         </div>

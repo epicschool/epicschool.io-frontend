@@ -20,8 +20,11 @@
                            Discord
                         </a>
                         &nbsp;
-                        <a href="mailto:winston@epicschool.io" class="button is-medium is-info is-outlined">
+                        <!-- <a href="mailto:winston@epicschool.io" class="button is-medium is-info is-outlined">
                            winston@epicschool.io
+                        </a> -->
+                        <a href="mailto:n4e.majed@gmail.com" class="button is-medium is-info is-outlined">
+                          n4e.majed@gmail.com
                         </a>
                     </p>
                 </div>

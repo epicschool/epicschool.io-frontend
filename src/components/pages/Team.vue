@@ -56,7 +56,7 @@ export default class Team extends Vue {
                 rank: 'Junin',
                 description: 'Full Stack Software Developer',
                 imagePath: 'img/team/majed.png',
-                githubProfileLink:'https://github.com/m16',
+                githubProfileLink: 'https://github.com/m16',
             },
             {
                 id: 2,
@@ -64,7 +64,7 @@ export default class Team extends Vue {
                 rank: 'Genin',
                 description: 'Student & Technology Geek',
                 imagePath: 'img/team/mark.png',
-                githubProfileLink:'https://github.com/tenderribs',
+                githubProfileLink: 'https://github.com/tenderribs',
             },
         ];
 }
