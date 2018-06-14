@@ -64,7 +64,7 @@ export default new Router({
                 path: 'survey',
                 name: 'Survey',
                 component: Survey,
-            }
+            },
         ],
     },
     {
@@ -90,8 +90,6 @@ export default new Router({
                 name: 'register',
                 component: Register,
             },
-
-
         ],
     },
 

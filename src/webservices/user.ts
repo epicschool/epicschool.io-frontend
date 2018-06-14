@@ -13,7 +13,6 @@ class UserWebservice {
      */
     public login(email: string, password: string) {
         return axios.post('/auth/login', {
-            grant_type: 'password',
             email,
             password,
         });
@@ -21,7 +20,6 @@ class UserWebservice {
 
     public register(user: User) {
         return axios.post('/auth/register', {
-            grant_type: 'password',
             firstname: user.firstname,
             lastname: user.lastname,
             email: user.email,
