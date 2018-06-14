@@ -120,15 +120,15 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
                 categoryImagePath: 'img/courses/code.jpg',
             },
 
-            {
-                id: 8,
-                title: 'Vue',
-                 // tslint:disable-next-line:max-line-length
-                description: 'Vue.js is an open-source JavaScript framework for building user interfaces. Integration into projects that use other JavaScript libraries is made easy with Vue because it is designed to be incrementally adoptable.',
-                categoryTitle: 'Web Development',
-                imagePath: 'img/courses/vue2.jpeg',
-                categoryImagePath: 'img/courses/code.jpg',
-            },
+            // {
+            //     id: 8,
+            //     title: 'Vue',
+            // tslint:disable-next-line:max-line-length
+            //     description: 'Vue.js is an open-source JavaScript framework for building user interfaces. Integration into projects that use other JavaScript libraries is made easy with Vue because it is designed to be incrementally adoptable.',
+            //     categoryTitle: 'Web Development',
+            //     imagePath: 'img/courses/vue2.jpeg',
+            //     categoryImagePath: 'img/courses/code.jpg',
+            // },
 
 
 
