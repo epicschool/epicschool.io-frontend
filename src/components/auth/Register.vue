@@ -67,10 +67,16 @@
             <!-- <div class="form-group">
                 <span id="errorMsg" style="color:red; font-weight: 600">{{errorMsg}}<br/></span>
             </div> -->
-          <p class="has-text-grey">
-            <router-link to="/auth/login">Already have an account? Sign in</router-link> &nbsp;·&nbsp;
-            <router-link to="/contactUs">Need Help?</router-link>
-          </p>
+
+            <p class="has-text-grey">
+                <router-link to="/auth/login">Already have an account? Sign in</router-link> &nbsp;·&nbsp;
+                <router-link to="/contactUs">Need Help?</router-link>
+            </p>
+            <p class="terms">
+                By clicking 'Sign up', you agree to our
+                <router-link  class="" to="/TermsOfService">Terms</router-link>
+                 and that you have read our <router-link  class="" to="/PrivacyPolicy">Privacy Policy</router-link>
+            </p>
     </div>
 
 </div>
@@ -200,5 +206,11 @@ export default class Register extends Vue {
 </script>
 
 <style scoped>
-
+.terms{
+    margin-top: 10px;
+    font-size: 11pt;
+    color: gray;
+    text-align: left !important;
+    font-weight: 100;
+}
 </style>

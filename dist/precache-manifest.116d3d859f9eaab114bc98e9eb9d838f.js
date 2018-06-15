@@ -12,16 +12,16 @@ self.__precacheManifest = [
     "url": "/service-worker.js"
   },
   {
-    "revision": "f5216373b35ddd1e3f2d",
-    "url": "/js/app.f5216373.js"
-  },
-  {
-    "revision": "bc66163ea1e6e40a83770a57e56eb4af",
-    "url": "/img/team/mark.png"
+    "revision": "9f5bae6904a6620acdf3",
+    "url": "/js/app.9f5bae69.js"
   },
   {
     "revision": "a69a8fb5782d83c87d640525968ff373",
     "url": "/img/sci-fi-castle-in-the-light.jpg"
+  },
+  {
+    "revision": "bc66163ea1e6e40a83770a57e56eb4af",
+    "url": "/img/team/mark.png"
   },
   {
     "revision": "06723ab91873b2b90eec6f67b9375ef0",
@@ -32,15 +32,15 @@ self.__precacheManifest = [
     "url": "/img/sci_fi_classroom.png"
   },
   {
-    "revision": "ff18ba19e791abf2576f13e74e807932",
-    "url": "/img/sci_fi_classroom.jpg"
-  },
-  {
     "revision": "508ff804229c6ce3ce1b8f39a886eea5",
     "url": "/img/sci_fi_classroom_2.jpg"
   },
   {
-    "revision": "be83b4ebdb5473541b1a0f554f2dff13",
+    "revision": "ff18ba19e791abf2576f13e74e807932",
+    "url": "/img/sci_fi_classroom.jpg"
+  },
+  {
+    "revision": "a6eb08cc6b635e7c36b968af35686e56",
     "url": "/index.html"
   },
   {
@@ -76,16 +76,16 @@ self.__precacheManifest = [
     "url": "/img/courses/helloworld.jpg"
   },
   {
-    "revision": "2f9cf63aadfd79c1aa880aaf697064dd",
-    "url": "/img/courses/laravel.jpg"
-  },
-  {
-    "revision": "b3a406974b3dfd9826a2dbc756d515a1",
-    "url": "/img/courses/php.png"
+    "revision": "535e92c65ddaff1a55f11df10c680c75",
+    "url": "/img/courses/javascript.jpg"
   },
   {
     "revision": "b13564d8fb71529f47e3cfb58d029b4b",
     "url": "/img/courses/programming1.jpg"
+  },
+  {
+    "revision": "b3a406974b3dfd9826a2dbc756d515a1",
+    "url": "/img/courses/php.png"
   },
   {
     "revision": "912ec66d7572ff821749319396470bde",
@@ -96,12 +96,12 @@ self.__precacheManifest = [
     "url": "/img/courses/vue1.png"
   },
   {
-    "revision": "1f8b899c242e01f225a8919e93361f7f",
-    "url": "/img/courses/vue2.jpeg"
-  },
-  {
     "revision": "002474823d306f1f7557fc6051189f5a",
     "url": "/img/courses/vue3.png"
+  },
+  {
+    "revision": "1f8b899c242e01f225a8919e93361f7f",
+    "url": "/img/courses/vue2.jpeg"
   },
   {
     "revision": "49545e3493e574d4dc825dcfbbf329c8",
@@ -124,8 +124,8 @@ self.__precacheManifest = [
     "url": "/img/epicschool_logo_2.70df66e9.png"
   },
   {
-    "revision": "535e92c65ddaff1a55f11df10c680c75",
-    "url": "/img/courses/javascript.jpg"
+    "revision": "2f9cf63aadfd79c1aa880aaf697064dd",
+    "url": "/img/courses/laravel.jpg"
   },
   {
     "revision": "09cfe3cd7b8cf6f149039cc23ebd2dcf",
@@ -136,24 +136,24 @@ self.__precacheManifest = [
     "url": "/fonts/fontawesome-webfont.fee66e71.woff"
   },
   {
-    "revision": "0514d435032aec9bcd499e1e1220897e",
-    "url": "/img/courses/3d.png"
-  },
-  {
-    "revision": "9e725b0548fb9cbd569b4eed85a7e495",
-    "url": "/img/courses/code.jpg"
+    "revision": "c41faa1ca1671d3be9b2e0fc81255bbd",
+    "url": "/img/courses/gamedevelopment.jpg"
   },
   {
     "revision": "1782af90c04471ff7aefd1752fc6aed7",
     "url": "/img/courses/gamemaker.jpg"
   },
   {
-    "revision": "c41faa1ca1671d3be9b2e0fc81255bbd",
-    "url": "/img/courses/gamedevelopment.jpg"
-  },
-  {
     "revision": "1f08c9c67bef956926bae15793926ea7",
     "url": "/img/courses/csharp.jpg"
+  },
+  {
+    "revision": "9e725b0548fb9cbd569b4eed85a7e495",
+    "url": "/img/courses/code.jpg"
+  },
+  {
+    "revision": "0514d435032aec9bcd499e1e1220897e",
+    "url": "/img/courses/3d.png"
   },
   {
     "revision": "b06871f281fee6b241d60582ae9369b9",
@@ -176,7 +176,7 @@ self.__precacheManifest = [
     "url": "/css/chunk-vendors.3dda5bf8.css"
   },
   {
-    "revision": "f5216373b35ddd1e3f2d",
-    "url": "/css/app.c045a4ca.css"
+    "revision": "9f5bae6904a6620acdf3",
+    "url": "/css/app.39a3db17.css"
   }
 ];
