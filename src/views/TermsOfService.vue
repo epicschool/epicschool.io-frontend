@@ -61,13 +61,13 @@
                             <p class="c1 c3"><span class="c0"></span></p>
                             <p class="c1 c2"><span class="c0"></span></p>
                             <p class="c1"><span class="c0">https://epicschool.io/</span></p>
-                            <p class="c1"><span class="c0">Steigstrasse 1</span></p>
-                            <p class="c1"><span class="c0">Oberrohrdorf, Aargau 5452</span></p>
+                            <p class="c1"><span class="c0">Bruggerstrasse 161</span></p>
+                            <p class="c1"><span class="c0">5400 Baden AG </span></p>
                             <p class="c1"><span class="c0">Switzerland</span></p>
                             <p class="c1 c2"><span class="c0"></span></p>
                             <p class="c1"><span><a class="c7" href="mailto:winston@epicschool.io">winston@epicschool.io</a></span></p>
                             <p class="c1 c2"><span class="c0"></span></p>
-                            <p class="c1"><span class="c0">Last Edited on 2018-06-14</span></p>
+                            <p class="c1"><span class="c0">Last Edited on 2018-08-05</span></p>
                             <p class="c1 c2"><span class="c0"></span></p>
                         </body>
                     </div>
