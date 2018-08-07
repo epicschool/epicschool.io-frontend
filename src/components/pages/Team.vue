@@ -2,7 +2,7 @@
     <div class="hero-body">
         <div class="container has-text-centered">
             <div class="columns is-vcentered">
-                <div v-for="teamMember in teamMembers" :key="teamMember.id"  class="column is-3 ">
+                <div v-for="teamMember in teamMembers" :key="teamMember.id"  class="column is-3 " v-on:click="showModal()">
            
                             <figure class="image is-4by3">
                                 <img :src="teamMember.imagePath" alt="Placeholder image">
@@ -54,19 +54,23 @@ export default class Team extends Vue {
                 id: 1,
                 name: 'Majed',
                 rank: 'Junin',
-                description: 'Full Stack Software Developer',
-                imagePath: 'img/team/majed.png',
+                description: 'A.k.a Sensei, Full Stack Software Developer',
+                imagePath: 'img/team/transparentSensei.png',
                 githubProfileLink: 'https://github.com/m16',
             },
             {
                 id: 2,
-                name: 'Mark',
+                name: 'Noob',
                 rank: 'Genin',
-                description: 'Student & Technology Geek',
-                imagePath: 'img/team/mark.png',
+                description: 'Student, often referred to by others as "noob"',
+                imagePath: 'img/team/transparentNoob.png',
                 githubProfileLink: 'https://github.com/tenderribs',
             },
         ];
+        
+        showModal(){
+            console.log('showingModal')
+}
 }
 </script>
 
