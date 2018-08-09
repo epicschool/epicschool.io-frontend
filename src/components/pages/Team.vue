@@ -2,38 +2,40 @@
     <div class="hero-body">
         <div class="container has-text-centered">
             <div class="columns is-vcentered">
-                <div v-for="teamMember in teamMembers" :key="teamMember.id"  class="column is-6 " v-on:click="showModal()">
+                <div v-for="teamMember in teamMembers" :key="teamMember.id"  class="column is-6 ">
                     
-                            <figure class="image">
-                                <img :src="teamMember.imagePath" alt="Placeholder image">
-                            </figure>
-                        
-                    <div class="overlay" :style="teamMember.overlayBackgroundColor">
-                        <div class="title is-2">
-                        {{teamMember.name}}                        
+                    <figure class="image" v-on:mouseover="showOverlay()">
+                        <img :src="teamMember.imagePath" alt="Placeholder image">
+                    </figure>    
+
+                    <div class="animated" id="fadeBoi">
+                        <div class="overlay" :style="teamMember.overlayBackgroundColor">
+                            <div class="title is-2">
+                            {{teamMember.name}}                        
+                            </div>
+
+                            <div class="subtitle is-4">
+                                <!-- Rank : {{teamMember.rank}} -->                        
+                            </div>
+
+                            <div class="subtitle is-6 team-description">
+                                {{teamMember.description}}
+                            </div>
+
+                            <br>
+
+                            <p class="has-text-centered">
+                                <a class="button is-info is-outlined" :href="teamMember.githubProfileLink" target="blank">
+                                    <i class="fa fa-github fa-2x"></i>
+                                    <!-- <font-awesome-icon :icon="['far', 'spinner']" /> -->
+                                </a>
+                                &nbsp;
+                                <a class="button is-info is-outlined">
+                                    Learn more
+                                </a>
+                            </p>   
+
                         </div>
-
-                        <div class="subtitle is-4">
-                            <!-- Rank : {{teamMember.rank}} -->                        
-                        </div>
-
-                        <div class="subtitle is-6 team-description">
-                            {{teamMember.description}}
-                        </div>
-
-                        <br>
-
-                        <p class="has-text-centered">
-                            <a class="button is-info is-outlined" :href="teamMember.githubProfileLink" target="blank">
-                                <i class="fa fa-github fa-2x"></i>
-                                <!-- <font-awesome-icon :icon="['far', 'spinner']" /> -->
-                            </a>
-                            &nbsp;
-                            <a class="button is-info is-outlined">
-                                Learn more
-                            </a>
-                        </p>   
-
                     </div>
                 </div>
             </div>
@@ -71,11 +73,20 @@ export default class Team extends Vue {
                 overlayBackgroundColor: 'background-color:#f44141;',
             },
         ];
+        showOverlay(){
+            console.log('function activated')
+            let status = "fadeIn"
+            var element = document.getElementById("fadeBoi")
+            if (element!.classList.contains(status)) {
+                element!.classList.remove(status)       
+            } else {
+                element!.classList.add(status)    
+            }
+            console.log(element)
+        }
+}
         
-        showModal(){
-            console.log('showingModal')
-}
-}
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -87,24 +98,24 @@ export default class Team extends Vue {
 }
 .image {
   display: block;
-  width: 75%;
+  width: 100%;
   height: auto;
 }
 .overlay {
-  position: absolute;
+//   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   height: 50%;
-  width: 50%;
-  opacity: 0;
-  transition: .5s ease;
+  width: 100%;
+//   opacity: 0;
+//   transition: .5s ease;
 }
 .text {
   color: white;
   font-size: 20px;
-  position: absolute;
+//   position: absolute;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
@@ -112,7 +123,13 @@ export default class Team extends Vue {
   transform: translate(-50%, -50%);
   text-align: center;
 }
-.column:hover .overlay {
-  opacity: 1;
+// .column:hover .overlay {
+//   opacity: 0.7;
+// }
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
