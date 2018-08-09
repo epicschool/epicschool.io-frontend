@@ -73,7 +73,12 @@ export default class Team extends Vue {
                 overlayBackgroundColor: 'background-color:#f44141;',
             },
         ];
-        upHere: false
+
+        private upHere: boolean = false;
+
+        // this is the problem.
+        // upHere: false
+
         // showOverlay(){
         //     console.log('function activated')
         //     let status = "fadeIn"
