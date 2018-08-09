@@ -4,11 +4,11 @@
             <div class="columns is-vcentered">
                 <div v-for="teamMember in teamMembers" :key="teamMember.id"  class="column is-6 ">
                     
-                    <figure class="image" v-on:mouseover="showOverlay()">
+                    <figure class="image" @mouseover="upHere = true" @mouseleave="upHere = false">
                         <img :src="teamMember.imagePath" alt="Placeholder image">
                     </figure>    
 
-                    <div class="animated" id="fadeBoi">
+                    <div id="fadeBoi" v-show="upHere">
                         <div class="overlay" :style="teamMember.overlayBackgroundColor">
                             <div class="title is-2">
                             {{teamMember.name}}                        
@@ -73,17 +73,18 @@ export default class Team extends Vue {
                 overlayBackgroundColor: 'background-color:#f44141;',
             },
         ];
-        showOverlay(){
-            console.log('function activated')
-            let status = "fadeIn"
-            var element = document.getElementById("fadeBoi")
-            if (element!.classList.contains(status)) {
-                element!.classList.remove(status)       
-            } else {
-                element!.classList.add(status)    
-            }
-            console.log(element)
-        }
+        upHere: false
+        // showOverlay(){
+        //     console.log('function activated')
+        //     let status = "fadeIn"
+        //     var element = document.getElementById("fadeBoi")
+        //     if (element!.classList.contains(status)) {
+        //         element!.classList.remove(status)       
+        //     } else {
+        //         element!.classList.add(status)    
+        //     }
+        //     console.log(element)
+        // }
 }
         
 
@@ -103,10 +104,10 @@ export default class Team extends Vue {
 }
 .overlay {
 //   position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
   height: 50%;
   width: 100%;
 //   opacity: 0;
@@ -126,10 +127,10 @@ export default class Team extends Vue {
 // .column:hover .overlay {
 //   opacity: 0.7;
 // }
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
+// .fade-enter-active, .fade-leave-active {
+//   transition: opacity .5s;
+// }
+// .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+//   opacity: 0;
+// }
 </style>
