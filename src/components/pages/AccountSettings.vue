@@ -86,24 +86,24 @@
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
-    import { Getter } from 'vuex-class'
+    import { Getter } from 'vuex-class';
 
     import { User } from '../../models/user';
-    import { userWebservice } from '../../webservices/user' 
-    import toast from 'buefy'
+    import { userWebservice } from '../../webservices/user';
+    import toast from 'buefy';
 
     @Component({
-        name:'AccountSettings',
+        name: 'AccountSettings',
         components: {
 
-        }
+        },
     })
 
     export default class AccountSettings extends Vue {
 
-        protected updatingUserInfoErrorMsg: string = ''
-        protected changePassword: boolean = false
-        protected updatingUserInfo: boolean = false
+        protected updatingUserInfoErrorMsg: string = '';
+        protected changePassword: boolean = false;
+        protected updatingUserInfo: boolean = false;
 
         protected user: User = {
             id: 0,
@@ -111,17 +111,17 @@
             lastname: '',
             email: '',
             new_email: '',
-            email_confirmation:'',
+            email_confirmation: '',
             password: '',
             password_confirmation: '',
-            new_password:'',
-            email_confirmed:false,
+            new_password: '',
+            email_confirmed: false,
             address : '',
             address_addition: '',
             postcode : '',
             city : '',
             country : '',
-        }
+        };
 
         protected userOld: User = {
             id: 0,
@@ -129,37 +129,36 @@
             lastname: '',
             email: '',
             new_email: '',
-            email_confirmation:'',
+            email_confirmation: '',
             password: '',
             password_confirmation: '',
-            new_password:'',
-            email_confirmed:false,
+            new_password: '',
+            email_confirmed: false,
             address : '',
             address_addition: '',
             postcode : '',
             city : '',
             country : '',
-        }
+        };
 
-        @Getter('account/currentUser') currentUser
-        
+        @Getter('account/currentUser') private currentUser;
         // Mounted is called initially
-        mounted() {
+        private mounted() {
             // deep copy the current user object
             this.user = JSON.parse(JSON.stringify(this.currentUser));
-            this.user.password = "";
-            this.user.new_password = "";
+            this.user.password = '';
+            this.user.new_password = '';
             this.userOld = JSON.parse(JSON.stringify(this.user));
 
 
         }
 
-        showNewPasswordField() {
+        private showNewPasswordField() {
             this.changePassword = true;
         }
 
-        save() {
-            var self = this;
+        private save() {
+            const self = this;
             // tslint:disable-next-line:max-line-length
             if (this.user.firstname !== this.userOld.firstname || this.user.lastname !== this.userOld.lastname || this.user.email !== this.userOld.email || this.user.new_password !== '') {
                 if (this.user.password === '') {
