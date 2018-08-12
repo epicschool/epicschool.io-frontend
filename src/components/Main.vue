@@ -59,8 +59,8 @@
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
-    import  Footer  from './Footer.vue';
-    import { Getter } from 'vuex-class'
+    import Footer from './Footer.vue';
+    import { Getter } from 'vuex-class';
 
     @Component({
     components: {
@@ -68,7 +68,7 @@
     },
     })
     export default class Main extends Vue {
-            protected activeMenu: String = '';
+            protected activeMenu: string = '';
 
             @Getter('account/loggedIn') private loggedIn;
             @Getter('account/isEmailConfirmed') private isEmailConfirmed;
