@@ -23,7 +23,6 @@
     
     @Component
     export default class Logout extends Vue {
-        
         @Action('utils/RESET') private reset;
 
         // Mounted is called initially

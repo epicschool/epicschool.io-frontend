@@ -89,13 +89,11 @@
     
         // Methods
         private confirmEmail() {
-    
-            if(this.emailConfirmationToken === '') {
-                this.errorMsg = 'token'
-                return
+            if (this.emailConfirmationToken === '') {
+                this.errorMsg = 'token';
+                return 0;
             }
-    
-            const self = this
+            const self = this;
     
             userWebservice.confirmEmail(this.emailConfirmationToken).then(function(response) {
                 self.errorMsg = '';
@@ -104,30 +102,28 @@
                         if (!self.loggedIn) {
                             self.$store.commit('account/setApiToken', response.data.api_token);
                        }
-                        userWebservice.getUserInfo().then(function(response) {
-                            self.$store.commit('account/setCurrentUser', response.data);
+                        userWebservice.getUserInfo().then(function(getUserInfoResponse) {
+                            self.$store.commit('account/setCurrentUser', getUserInfoResponse.data);
                             self.$router.push({ path: '/' });
-                        })
+                        });
                 }, 2000);
             }).catch(function(error) {
                 self.serverErrorMsg = 'Der Token sind nicht korrekt';
                 console.log(error);
-            })
+            });
         }
 
         private extractGetParameterFromVueURL(parameterName) {
-            var result = '';
-            var tmp = Array<string>();
-            var url = window.location + '';
-           
-            url.split("#")[1].split("?")[1].split('&')
+            let result = '';
+            let tmp = Array<string>();
+            const url = window.location + '';
+            url.split('#')[1].split('?')[1].split('&')
             .forEach(function(item) {
-                tmp = item.split("=");
+                tmp = item.split('=');
                 if (tmp[0] === parameterName) {
                     result = decodeURIComponent(tmp[1]);
                 }
             });
-            
             if (result === null) {
                 return 'none';
             }
@@ -141,7 +137,7 @@
                 self.resendingToken = false;
             }).catch(function(error) {
                 console.log(error);
-            })
+            });
         }
     }
 </script>

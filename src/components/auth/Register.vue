@@ -132,69 +132,70 @@ export default class Register extends Vue {
         this.params.type = RegisterType[this.$route.query.type];
         this.params.token = this.$route.query.token;
         // Sponsor has also the amount
-        if(this.$route.query.amount) {
-            this.params.amount = this.$route.query.amount
+        if (this.$route.query.amount) {
+            this.params.amount = this.$route.query.amount;
         }
     }
 
-    register() {
-        var self = this
+    private register() {
+        const self = this;
         if (this.validate()) {
             self.disabled = true;
 
-            userWebservice.register(this.user).then(function (response) {
-
-                self.$store.commit('account/setApiToken', response.data.api_token)
-
-                userWebservice.getUserInfo().then(function (response) {
-                    self.$store.commit('account/setCurrentUser', response.data)
+            userWebservice.register(this.user).then(function(response) {
+                self.$store.commit('account/setApiToken', response.data.api_token);
+                userWebservice.getUserInfo().then(function(getUserInfoResponse) {
+                    self.$store.commit('account/setCurrentUser', getUserInfoResponse.data);
                     self.redirect();
-                })
+                });
 
 
-            }).catch(function (error) {
+            }).catch(function(error) {
                 self.disabled = false;
 
                 // Check if the email is already taken
-                if(error.response && error.response.data && error.response.data.email == "The email has already been taken.") {
-                    self.errorMsg = "emailTaken"
+                // tslint:disable-next-line:max-line-length
+                if (error.response && error.response.data && error.response.data.email === 'The email has already been taken.') {
+                    self.errorMsg = 'emailTaken';
                 }
 
-                // Check if password was not 
-                if(error.response && error.response.data && error.response.data.password == "The password must be at least 8 characters long") {
-                    self.errorMsg = "passwordNotValid"
+                // Check if password was not
+                // tslint:disable-next-line:max-line-length
+                if (error.response && error.response.data && error.response.data.password === 'The password must be at least 8 characters long') {
+                    self.errorMsg = 'passwordNotValid';
                 }
-            })
+            });
         }
     }
 
-    redirect(){
-        this.$router.push({ path: '/' })
+    private redirect() {
+        this.$router.push({ path: '/' });
     }
 
-    validateEmail(email) {
-        var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    private validateEmail(email) {
+        // tslint:disable-next-line:max-line-length
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
         return re.test(email.toLowerCase());
     }
 
-    validate() {
-        if (this.user.firstname == '') {
+    private validate() {
+        if (this.user.firstname === '') {
             // this.errorMsg = 'Plaese enter your Name';
             this.errorMsg = 'firstname';
             return 0;
-        } else if (this.user.lastname == '') {
+        } else if (this.user.lastname === '') {
             this.errorMsg = 'lastname';
             return 0;
         } else if (!this.validateEmail(this.user.email)) {
             this.errorMsg = 'email';
             return 0;
-        } else if (this.user.password == '') {
+        } else if (this.user.password === '') {
             this.errorMsg = 'password';
             return 0;
-        } else if (this.user.password_confirmation == '') {
+        } else if (this.user.password_confirmation === '') {
             this.errorMsg = 'password_confirmation';
             return 0;
-        } else if (this.user.password_confirmation != this.user.password) {
+        } else if (this.user.password_confirmation !== this.user.password) {
             this.errorMsg = 'passwords_not_same';
             return 0;
         } else {

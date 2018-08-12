@@ -69,54 +69,53 @@
             postcode : '',
             city : '',
             country : '',
-        }
+        };
         protected disabled: boolean = false;
         protected errorMsg: string = '';
-
         protected action: string = '';
-        protected event_id: string = '';
-    
+        protected eventId: string = '';
+
         // Mounted is called initially
         private mounted() {
             // console.log('This is called on mounted')
-            this.event_id = this.$route.query.hasOwnProperty('event_id')?this.$route.query.event_id:'';
-            this.action = this.$route.query.hasOwnProperty('action')?this.$route.query.action:'';
+            this.eventId = this.$route.query.hasOwnProperty('event_id') ? this.$route.query.event_id : '';
+            this.action = this.$route.query.hasOwnProperty('action') ? this.$route.query.action : '';
         }
 
         // Methods
         private login() {
             console.log('Login called');
     
-            if(this.user.email === '' || this.user.password === '') {
+            if (this.user.email === '' || this.user.password === '') {
                 this.errorMsg = 'The email address or password is missing.';
-                return
+                return 0;
             } else if (!this.validateEmail(this.user.email)) {
                 this.errorMsg = 'Please enter a valid e-mail address.';
                 return 0;
-            } 
-            const self = this
+            }
+            const self = this;
             self.disabled = true;
 
             userWebservice.login(this.user.email, this.user.password).then(function(response) {
                 self.errorMsg = '';
-                self.$store.commit('account/setApiToken', response.data.api_token)
-    
-                userWebservice.getUserInfo().then(function(response) {
-                    self.$store.commit('account/setCurrentUser', response.data)
+                self.$store.commit('account/setApiToken', response.data.api_token);
+                userWebservice.getUserInfo().then(function(getUserInfoResponse) {
+                    self.$store.commit('account/setCurrentUser', getUserInfoResponse.data);
                     self.redirect();
-                })
-            }).catch(function (error) {
-                self.errorMsg = 'The E-Mail or Password is incorrect'
+                });
+            }).catch(function(error) {
+                self.errorMsg = 'The E-Mail or Password is incorrect';
                 self.disabled = false;
-                console.log(error)
-            })
+                console.log(error);
+            });
         }
 
-        private redirect(){
-            this.$router.push({ path: '/' })
+        private redirect() {
+            this.$router.push({ path: '/' });
         }
 
         private validateEmail(email) {
+            // tslint:disable-next-line:max-line-length
             const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email.toLowerCase());
         }
