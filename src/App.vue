@@ -8,9 +8,9 @@
     import router from 'vue-router';
 
     @Component({
-        name:'App',
+        name: 'App',
         components: {
-        }
+        },
     })
 
     export default class App extends Vue {
