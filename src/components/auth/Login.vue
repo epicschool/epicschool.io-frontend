@@ -52,7 +52,6 @@
     
     @Component
     export default class Login extends Vue {
-        
         // Data
         protected user: User = {
             id: 0,
@@ -60,18 +59,18 @@
             lastname: '',
             email: '',
             new_email: '',
-            email_confirmation:'',
+            email_confirmation: '',
             password: '',
             password_confirmation: '',
-            new_password:'',
-            email_confirmed:false,
+            new_password: '',
+            email_confirmed: false,
             address : '',
             address_addition: '',
             postcode : '',
             city : '',
             country : '',
         }
-        protected disabled:boolean = false;
+        protected disabled: boolean = false;
         protected errorMsg: string = '';
 
         protected action: string = '';
@@ -83,10 +82,10 @@
             this.event_id = this.$route.query.hasOwnProperty('event_id')?this.$route.query.event_id:'';
             this.action = this.$route.query.hasOwnProperty('action')?this.$route.query.action:'';
         }
-    
+
         // Methods
         private login() {
-            console.log('Login called')
+            console.log('Login called');
     
             if(this.user.email === '' || this.user.password === '') {
                 this.errorMsg = 'The email address or password is missing.';

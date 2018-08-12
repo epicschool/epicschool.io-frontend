@@ -63,18 +63,16 @@
     import { userWebservice } from '../../webservices/user';
     
     @Component({
-        name:'ConfirmEmail',
+        name: 'ConfirmEmail',
     })
     export default class ConfirmEmail extends Vue {
-        
         // Data
-        protected disabled:boolean = false;
+        protected disabled: boolean = false;
         protected errorMsg: string = '';
         protected serverErrorMsg: string = '';
         protected emailConfirmationToken: string = '';
-        protected emailConfirmed:boolean = false;
-        protected resendingToken:boolean = false;
-
+        protected emailConfirmed: boolean = false;
+        protected resendingToken: boolean = false;
 
         @Getter('account/loggedIn') private loggedIn;
 
@@ -111,7 +109,7 @@
                             self.$router.push({ path: '/' });
                         })
                 }, 2000);
-            }).catch(function (error) {
+            }).catch(function(error) {
                 self.serverErrorMsg = 'Der Token sind nicht korrekt';
                 console.log(error);
             })
@@ -126,11 +124,11 @@
             .forEach(function(item) {
                 tmp = item.split("=");
                 if (tmp[0] === parameterName) {
-                    result = decodeURIComponent(tmp[1])
+                    result = decodeURIComponent(tmp[1]);
                 }
             });
             
-            if (result == null) {
+            if (result === null) {
                 return 'none';
             }
             return result;
