@@ -68,27 +68,23 @@
     },
     })
     export default class Main extends Vue {
-            protected activeMenu:String = ''
+            protected activeMenu: String = '';
 
-            @Getter('account/loggedIn') loggedIn
-            @Getter('account/isEmailConfirmed') isEmailConfirmed
-            @Getter('account/currentUser') currentUser
+            @Getter('account/loggedIn') private loggedIn;
+            @Getter('account/isEmailConfirmed') private isEmailConfirmed;
+            @Getter('account/currentUser') private currentUser;
 
-            mounted() {
-               
-            }
-
-            toggleNavBar(){
-                console.log('toggling navbar')
-                let active = "is-active"
-                var element = document.getElementById("navbarMenu")
+            private toggleNavBar() {
+                console.log('toggling navbar');
+                const active = 'is-active';
+                const element = document.getElementById('navbarMenu');
                 // element.classList returns an array of element class names
                 // we check if it contains "is-active" we remove it else we add it
                 // console.log(element.classList)
                 if (element!.classList.contains(active)) {
-                    element!.classList.remove(active)       
+                    element!.classList.remove(active);
                 } else {
-                    element!.classList.add(active)    
+                    element!.classList.add(active);
                 }
             }
     }
