@@ -80,9 +80,9 @@
         private mounted() {
             console.log('ConfirmEmail mounted');
             this.emailConfirmationToken = this.extractGetParameterFromVueURL('email_confirmation_token');
-            if (this.emailConfirmationToken != '') {
+            if (this.emailConfirmationToken !== '') {
                 // setTimeout(() => {
-                    this.confirmEmail();  
+                    this.confirmEmail();
                 // }, 1500);
             }
         }
