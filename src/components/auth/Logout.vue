@@ -24,28 +24,28 @@
     @Component
     export default class Logout extends Vue {
         
-        @Action('utils/RESET') reset
+        @Action('utils/RESET') private reset;
 
         // Mounted is called initially
-        mounted() {
-            console.log('Logout called')
+        private mounted() {
+            console.log('Logout called');
             this.logout();
         }
     
         // Methods
-        logout() {
-            let self = this;
-            userWebservice.logout().then(function (response) {
-                self.$store.commit('account/logout')
+       private logout() {
+            const self = this;
+            userWebservice.logout().then(function(response) {
+                self.$store.commit('account/logout');
 
-                self.reset()
+                self.reset();
 
                 setTimeout(() => {
-                    self.$router.push({ path: '/' })
+                    self.$router.push({ path: '/' });
                 }, 300);
-            }).catch(function (error) {
-                console.log(error)
-            })
+            }).catch(function(error) {
+                console.log(error);
+            });
         }
     }
 </script>

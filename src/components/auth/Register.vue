@@ -89,49 +89,48 @@ import { User } from '../../models/user';
 
 import { Component, Prop, Vue } from 'vue-property-decorator';
 
-import { userWebservice } from '../../webservices/user' 
+import { userWebservice } from '../../webservices/user';
 
 export enum RegisterType {
-    organisation = "organisation",
-    runner = "runner",
-    sponsor = "sponsor",
-    undefined = "undefined"
+    organisation = 'organisation',
+    runner = 'runner',
+    sponsor = 'sponsor',
+    undefined = 'undefined',
 }
 
 @Component
 export default class Register extends Vue {
-    
     protected user: User = {
         id: 0,
         firstname: '',
         lastname: '',
         email: '',
         new_email: '',
-        email_confirmation:'',
+        email_confirmation: '',
         password: '',
         password_confirmation: '',
-        new_password:'',
-        email_confirmed:false,
+        new_password: '',
+        email_confirmed: false,
         address : '',
         address_addition: '',
         postcode : '',
         city : '',
         country : '',
-    }
+    };
 
-    protected disabled:boolean = false
-    protected errorMsg: string = ''
+    protected disabled: boolean = false;
+    protected errorMsg: string = '';
 
     protected params = {
         type: RegisterType.undefined,
         token: '',
         amount: '',
-    }
+    };
 
-    mounted() {
-        this.params.type = RegisterType[this.$route.query.type] // Depending on the type passed it loads the enum values
-        this.params.token = this.$route.query.token
-        
+    private mounted() {
+        // Depending on the type passed it loads the enum values
+        this.params.type = RegisterType[this.$route.query.type];
+        this.params.token = this.$route.query.token;
         // Sponsor has also the amount
         if(this.$route.query.amount) {
             this.params.amount = this.$route.query.amount

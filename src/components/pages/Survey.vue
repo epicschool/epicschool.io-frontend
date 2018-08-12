@@ -22,7 +22,7 @@
 
 <script lang="ts">
     import { Component, Prop, Vue } from 'vue-property-decorator';
-    import { Getter } from 'vuex-class'
+    import { Getter } from 'vuex-class';
 
     import { User } from '../../models/user';
     import { userWebservice } from '../../webservices/user';

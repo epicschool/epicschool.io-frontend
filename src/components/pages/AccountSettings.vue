@@ -160,28 +160,29 @@
 
         save() {
             var self = this;
-            if (this.user.firstname != this.userOld.firstname || this.user.lastname != this.userOld.lastname || this.user.email != this.userOld.email || this.user.new_password != '') { 
-                if (this.user.password == '') {
-                        this.updatingUserInfoErrorMsg = "Please enter the current password";
+            // tslint:disable-next-line:max-line-length
+            if (this.user.firstname !== this.userOld.firstname || this.user.lastname !== this.userOld.lastname || this.user.email !== this.userOld.email || this.user.new_password !== '') {
+                if (this.user.password === '') {
+                        this.updatingUserInfoErrorMsg = 'Please enter the current password';
                         return false;
-                } else if (this.user.firstname == '' || this.user.lastname == '') {
-                    this.updatingUserInfoErrorMsg = "Please enter first name and last name";
+                } else if (this.user.firstname === '' || this.user.lastname === '') {
+                    this.updatingUserInfoErrorMsg = 'Please enter first name and last name';
                     return false;
                 } else if (this.user.firstname.length < 2 || this.user.lastname.length < 2) {
-                    this.updatingUserInfoErrorMsg = "The firstname / lastname must be at least two characters long";
+                    this.updatingUserInfoErrorMsg = 'The firstname / lastname must be at least two characters long';
                     return false;
                 } else if (!this.validateEmail(this.user.email)) {
-                    this.updatingUserInfoErrorMsg = "Please enter a valid E-Mail address";
+                    this.updatingUserInfoErrorMsg = 'Please enter a valid E-Mail address';
                     return false;
-                } else if (this.changePassword && this.user.new_password != '' ) {
-                    if (this.user.password == '') {
-                        this.updatingUserInfoErrorMsg = "Please enter the current password";
+                } else if (this.changePassword && this.user.new_password !== '' ) {
+                    if (this.user.password === '') {
+                        this.updatingUserInfoErrorMsg = 'Please enter the current password';
                         return false;
                     } else if (this.user.password.length < 8) {
-                        this.updatingUserInfoErrorMsg = "Current password is incorrect!"
+                        this.updatingUserInfoErrorMsg = 'Current password is incorrect!';
                         return false;
                     } else if (this.user.new_password.length < 8) {
-                        this.updatingUserInfoErrorMsg = "The password must be at least 8 characters long"
+                        this.updatingUserInfoErrorMsg = 'The password must be at least 8 characters long';
                         return false;
                     }
                 }
@@ -190,46 +191,46 @@
                 self.$toast.open({
                     duration: 3000,
                     message: 'No changes detected!',
-                    type: 'is-warning'
-                })
+                    type: 'is-warning',
+                });
                 return false;
             }
 
 
-             this.updatingUserInfo = true;
+            this.updatingUserInfo = true;
 
             // Update
-            userWebservice.changeAccountInfo(this.user).then( function (response) {
-                self.updatingUserInfo = false; 
-                self.updatingUserInfoErrorMsg = ""
+            userWebservice.changeAccountInfo(this.user).then(function(response) {
+                self.updatingUserInfo = false;
+                self.updatingUserInfoErrorMsg = '';
                 self.$toast.open({
                     duration: 5000,
                     message: 'Changes saved successfully!',
-                    type: 'is-success'
-                })
-                self.user.password = "";
-                self.user.new_password = "";
-                self.user.new_password = "";
-                self.updateUserInfo();   
-                self.userOld = JSON.parse(JSON.stringify(self.user));             
+                    type: 'is-success',
+                });
+                self.user.password = '';
+                self.user.new_password = '';
+                self.user.new_password = '';
+                self.updateUserInfo();
+                self.userOld = JSON.parse(JSON.stringify(self.user));
             }).catch(function(error) {
                 self.updatingUserInfo = false;
-                
-                self.updatingUserInfoErrorMsg = error.response.data.message
+                self.updatingUserInfoErrorMsg = error.response.data.message;
             });
 
         }
 
-        validateEmail(email) {
-            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        private validateEmail(email) {
+            // tslint:disable-next-line:max-line-length
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email.toLowerCase());
         }
 
-        updateUserInfo() {
-            let self = this;
-            userWebservice.getUserInfo().then(function (response) {
-                self.$store.commit('account/setCurrentUser', response.data)
-            })
+        private updateUserInfo() {
+            const self = this;
+            userWebservice.getUserInfo().then(function(response) {
+                self.$store.commit('account/setCurrentUser', response.data);
+            });
         }
 
     }

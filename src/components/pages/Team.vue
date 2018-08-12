@@ -84,14 +84,14 @@ export default class Team extends Vue {
         //     let status = "fadeIn"
         //     var element = document.getElementById("fadeBoi")
         //     if (element!.classList.contains(status)) {
-        //         element!.classList.remove(status)       
+        //         element!.classList.remove(status)
         //     } else {
-        //         element!.classList.add(status)    
+        //         element!.classList.add(status)
         //     }
         //     console.log(element)
         // }
 }
-        
+
 
 </script>
 
