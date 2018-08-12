@@ -59,8 +59,8 @@
     import router from 'vue-router';
     import { User } from '../../models/user';
     import { Component, Prop, Vue } from 'vue-property-decorator';
-    import { Getter } from 'vuex-class'    
-    import { userWebservice } from '../../webservices/user' 
+    import { Getter } from 'vuex-class';
+    import { userWebservice } from '../../webservices/user';
     
     @Component({
         name:'ConfirmEmail',
@@ -68,20 +68,20 @@
     export default class ConfirmEmail extends Vue {
         
         // Data
-        protected disabled:boolean = false
-        protected errorMsg: string = ''
-        protected serverErrorMsg: string = ''
-        protected emailConfirmationToken: string = ''
-        protected emailConfirmed:boolean = false
-        protected resendingToken:boolean = false
+        protected disabled:boolean = false;
+        protected errorMsg: string = '';
+        protected serverErrorMsg: string = '';
+        protected emailConfirmationToken: string = '';
+        protected emailConfirmed:boolean = false;
+        protected resendingToken:boolean = false;
 
 
-        @Getter('account/loggedIn') loggedIn
+        @Getter('account/loggedIn') private loggedIn;
 
         // Mounted is called initially
-        mounted() {
-            console.log('ConfirmEmail mounted')
-            this.emailConfirmationToken = this.extractGetParameterFromVueURL('email_confirmation_token')
+        private mounted() {
+            console.log('ConfirmEmail mounted');
+            this.emailConfirmationToken = this.extractGetParameterFromVueURL('email_confirmation_token');
             if (this.emailConfirmationToken != '') {
                 // setTimeout(() => {
                     this.confirmEmail();  
@@ -90,40 +90,40 @@
         }
     
         // Methods
-        confirmEmail() {
+        private confirmEmail() {
     
             if(this.emailConfirmationToken === '') {
                 this.errorMsg = 'token'
                 return
             }
     
-            let self = this
+            const self = this
     
-          userWebservice.confirmEmail(this.emailConfirmationToken).then(function (response) {
+            userWebservice.confirmEmail(this.emailConfirmationToken).then(function(response) {
                 self.errorMsg = '';
                 self.emailConfirmed = true;
                 setTimeout(() => {
                         if (!self.loggedIn) {
-                            self.$store.commit('account/setApiToken', response.data.api_token)
+                            self.$store.commit('account/setApiToken', response.data.api_token);
                        }
-                        userWebservice.getUserInfo().then(function (response) {
-                            self.$store.commit('account/setCurrentUser', response.data)
-                            self.$router.push({ path: '/' })
+                        userWebservice.getUserInfo().then(function(response) {
+                            self.$store.commit('account/setCurrentUser', response.data);
+                            self.$router.push({ path: '/' });
                         })
                 }, 2000);
             }).catch(function (error) {
-                self.serverErrorMsg = 'Der Token sind nicht korrekt'
-                console.log(error)
+                self.serverErrorMsg = 'Der Token sind nicht korrekt';
+                console.log(error);
             })
         }
 
-        extractGetParameterFromVueURL(parameterName) {
+        private extractGetParameterFromVueURL(parameterName) {
             var result = '';
             var tmp = Array<string>();
             var url = window.location + '';
            
             url.split("#")[1].split("?")[1].split('&')
-            .forEach(function (item) {
+            .forEach(function(item) {
                 tmp = item.split("=");
                 if (tmp[0] === parameterName) {
                     result = decodeURIComponent(tmp[1])
@@ -136,17 +136,15 @@
             return result;
         }
 
-        resendConfirmationToken() {
-            var self = this;
+        private resendConfirmationToken() {
+            const self = this;
             self.resendingToken = true;
-            userWebservice.resendEmailConfirmationToken().then(function (response) {
+            userWebservice.resendEmailConfirmationToken().then(function(response) {
                 self.resendingToken = false;
-            }).catch(function (error) {
-                console.log(error)
+            }).catch(function(error) {
+                console.log(error);
             })
         }
-
-
     }
 </script>
 

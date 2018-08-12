@@ -18,8 +18,8 @@
     import { User } from '../../models/user';
     
     import { Component, Prop, Vue } from 'vue-property-decorator';
-    import { Getter, Action } from 'vuex-class'
-    import { userWebservice } from '../../webservices/user' 
+    import { Getter, Action } from 'vuex-class';
+    import { userWebservice } from '../../webservices/user' ;
     
     @Component
     export default class Logout extends Vue {

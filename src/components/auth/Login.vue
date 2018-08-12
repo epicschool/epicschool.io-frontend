@@ -48,7 +48,7 @@
     
     import { Component, Prop, Vue } from 'vue-property-decorator';
     
-    import { userWebservice } from '../../webservices/user' 
+    import { userWebservice } from '../../webservices/user';
     
     @Component
     export default class Login extends Vue {
@@ -71,38 +71,38 @@
             city : '',
             country : '',
         }
-        protected disabled:boolean = false
-        protected errorMsg: string = ''
+        protected disabled:boolean = false;
+        protected errorMsg: string = '';
 
-        protected action: string = ''
-        protected event_id: string = ''
+        protected action: string = '';
+        protected event_id: string = '';
     
         // Mounted is called initially
-        mounted() {
+        private mounted() {
             // console.log('This is called on mounted')
-            this.event_id = this.$route.query.hasOwnProperty('event_id')?this.$route.query.event_id:''
-            this.action = this.$route.query.hasOwnProperty('action')?this.$route.query.action:''
+            this.event_id = this.$route.query.hasOwnProperty('event_id')?this.$route.query.event_id:'';
+            this.action = this.$route.query.hasOwnProperty('action')?this.$route.query.action:'';
         }
     
         // Methods
-        login() {
-            console.log("Login called")
+        private login() {
+            console.log('Login called')
     
             if(this.user.email === '' || this.user.password === '') {
-                this.errorMsg = 'The email address or password is missing.'
+                this.errorMsg = 'The email address or password is missing.';
                 return
             } else if (!this.validateEmail(this.user.email)) {
-                this.errorMsg = 'Please enter a valid e-mail address.'
+                this.errorMsg = 'Please enter a valid e-mail address.';
                 return 0;
             } 
-            let self = this
+            const self = this
             self.disabled = true;
 
-            userWebservice.login(this.user.email, this.user.password).then(function (response) {
+            userWebservice.login(this.user.email, this.user.password).then(function(response) {
                 self.errorMsg = '';
                 self.$store.commit('account/setApiToken', response.data.api_token)
     
-                userWebservice.getUserInfo().then(function (response) {
+                userWebservice.getUserInfo().then(function(response) {
                     self.$store.commit('account/setCurrentUser', response.data)
                     self.redirect();
                 })
@@ -113,12 +113,12 @@
             })
         }
 
-        redirect(){
+        private redirect(){
             this.$router.push({ path: '/' })
         }
 
-        validateEmail(email) {
-            var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        private validateEmail(email) {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email.toLowerCase());
         }
     }
