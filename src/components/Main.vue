@@ -30,7 +30,7 @@
                                 </li>
 
                                 <li>
-                                  <router-link  v-if="true"  class="navbar-item" to="/survey"> Survey </router-link>
+                                  <router-link  v-if="loggedIn"  class="navbar-item" to="/survey"> Survey </router-link>
                                 </li>
                                 
                                 <li>
