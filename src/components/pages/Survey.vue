@@ -1,20 +1,19 @@
 <template>
     <div class="columns is-mobile is-tablet">
-        <div class="column notification is-gunmetal is-6-widescreen is-offset-3-widescreen is-6-desktop is-offset-3-desktop is-10-tablet is-offset-1-tablet is-12-mobile">
-           
-            <div class="tile is-parent notification is-gunmetal ">
-                <article class="tile is-child notification is-light-gray">
-                    <div class="content">
-
-                        <div class="control is-horizontal input-group">
-                            <div class="control-label">
-                                <label class="label">Survey</label>
-                            </div>
-
-                        </div>
-                    </div>
-                </article>
-            </div>
+        <div class="column notification is-white is-6-widescreen is-offset-3-widescreen is-6-desktop is-offset-3-desktop is-10-tablet is-offset-1-tablet is-12-mobile">
+            <!-- <div class=" notification is-white"> -->
+                <!-- <article class=" notification is-white"> -->
+                            <iframe 
+                                src="https://docs.google.com/forms/d/e/1FAIpQLSeRiJ61u7rL0jjJkMFGXYw4aPdY_2ovl4CWNGCxsUGbwB_2rA/viewform?embedded=true"
+                                width="640" 
+                                height="795" 
+                                frameborder="10"
+                                marginheight="10"
+                                marginwidth="10">
+                                Loading...
+                            </iframe>
+                <!-- </article> -->
+            <!-- </div> -->
 
         </div>
     </div>
