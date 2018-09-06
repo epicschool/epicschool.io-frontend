@@ -42,7 +42,7 @@
         @Getter('account/currentUser') private currentUser;
         @Getter('account/loggedIn') private loggedIn;
         // Mounted is called initially
-        mounted() {
+        private mounted() {
             if (!this.loggedIn) {
                 this.$router.push({ path: '/auth/login' });
             }
