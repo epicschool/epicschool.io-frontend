@@ -11,7 +11,7 @@
             </figure>
                 <div class="field">
                     <p class="control has-icons-left has-icons-right">
-                        <input required v-model.lazy="user.firstname"  id="login_firstname" name="firstname" class="input" type="text" placeholder="First name">
+                        <input required v-model.lazy="user.firstname"  id="login_firstname" name="firstname" class="input is-large" type="text" placeholder="First name">
                         <span class="icon is-small is-left">
                         <i class="fa fa-user"></i>
                         </span>
@@ -21,7 +21,7 @@
 
                 <div class="field">
                     <p class="control has-icons-left has-icons-right">
-                        <input required v-model.lazy="user.lastname"  id="login_lastname" name="lastname" class="input" type="text" placeholder="Last name">
+                        <input required v-model.lazy="user.lastname"  id="login_lastname" name="lastname" class="input is-large" type="text" placeholder="Last name">
                         <span class="icon is-small is-left">
                         <i class="fa fa-user"></i>
                         </span>
@@ -31,7 +31,7 @@
 
                 <div class="field">
                     <p class="control has-icons-left has-icons-right">
-                        <input required v-model.lazy="user.email" id="login_email" name="email" class="input" type="email" placeholder="E-Mail">
+                        <input required v-model.lazy="user.email" id="login_email" name="email" class="input is-large" type="email" placeholder="E-Mail">
                         <span class="icon is-small is-left">
                         <i class="fa fa-envelope"></i>
                         </span>
@@ -41,27 +41,14 @@
                 </div>
                 <div class="field">
                     <p class="control has-icons-left">
-                        <input required v-model.lazy="user.password" id="password" class="input" type="password" placeholder="Password">
+                        <input required v-model.lazy="user.password" id="password" class="input is-large" type="password" placeholder="Password">
                         <span class="icon is-small is-left">
                         <i class="fa fa-lock"></i>
                         </span>
                         <span v-if="errorMsg=='password'" class="help is-danger">please enter a password</span> 
-                        <span v-if="errorMsg=='passwords_not_same'" class="help is-danger">The passwords are not identical</span> 
                         <span v-if="errorMsg=='passwordNotValid'" class="help is-danger">The password must be at least 8 characters long</span>
                     </p>
                 </div>
-
-                <div class="field">
-                    <p class="control has-icons-left">
-                        <input required v-model.lazy="user.password_confirmation" id="password_confirmation" class="input" type="password" placeholder="Confrim password">
-                        <span class="icon is-small is-left">
-                        <i class="fa fa-lock"></i>
-                        </span>
-                        <span v-if="errorMsg=='password_confirmation'" class="help is-danger">Please confirm your password</span> 
-                        <span v-if="errorMsg=='passwords_not_same'" class="help is-danger">The passwords are not identical</span> 
-                    </p>
-                </div>
-
               <button class="button is-block is-primary is-large is-fullwidth" v-on:click="register()" @keyup.enter="register" :disabled="disabled">Sign up</button>
           </div>
             <!-- <div class="form-group">
@@ -100,42 +87,10 @@ export enum RegisterType {
 
 @Component
 export default class Register extends Vue {
-    protected user: User = {
-        id: 0,
-        firstname: '',
-        lastname: '',
-        email: '',
-        new_email: '',
-        email_confirmation: '',
-        password: '',
-        password_confirmation: '',
-        new_password: '',
-        email_confirmed: false,
-        address : '',
-        address_addition: '',
-        postcode : '',
-        city : '',
-        country : '',
-    };
+    protected user: User = {} as User;
 
     protected disabled: boolean = false;
     protected errorMsg: string = '';
-
-    protected params = {
-        type: RegisterType.undefined,
-        token: '',
-        amount: '',
-    };
-
-    private mounted() {
-        // Depending on the type passed it loads the enum values
-        this.params.type = RegisterType[this.$route.query.type];
-        this.params.token = this.$route.query.token;
-        // Sponsor has also the amount
-        if (this.$route.query.amount) {
-            this.params.amount = this.$route.query.amount;
-        }
-    }
 
     private register() {
         const self = this;
@@ -191,12 +146,6 @@ export default class Register extends Vue {
             return 0;
         } else if (this.user.password === '') {
             this.errorMsg = 'password';
-            return 0;
-        } else if (this.user.password_confirmation === '') {
-            this.errorMsg = 'password_confirmation';
-            return 0;
-        } else if (this.user.password_confirmation !== this.user.password) {
-            this.errorMsg = 'passwords_not_same';
             return 0;
         } else {
             return true;

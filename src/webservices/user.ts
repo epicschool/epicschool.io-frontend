@@ -24,7 +24,6 @@ class UserWebservice {
             lastname: user.lastname,
             email: user.email,
             password: user.password,
-            password_confirmation: user.password_confirmation,
         });
     }
 

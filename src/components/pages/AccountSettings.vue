@@ -105,41 +105,8 @@
         protected changePassword: boolean = false;
         protected updatingUserInfo: boolean = false;
 
-        protected user: User = {
-            id: 0,
-            firstname: '',
-            lastname: '',
-            email: '',
-            new_email: '',
-            email_confirmation: '',
-            password: '',
-            password_confirmation: '',
-            new_password: '',
-            email_confirmed: false,
-            address : '',
-            address_addition: '',
-            postcode : '',
-            city : '',
-            country : '',
-        };
-
-        protected userOld: User = {
-            id: 0,
-            firstname: '',
-            lastname: '',
-            email: '',
-            new_email: '',
-            email_confirmation: '',
-            password: '',
-            password_confirmation: '',
-            new_password: '',
-            email_confirmed: false,
-            address : '',
-            address_addition: '',
-            postcode : '',
-            city : '',
-            country : '',
-        };
+        protected user: User = {} as User;
+        protected userOld: User = {} as User;
 
         @Getter('account/currentUser') private currentUser;
         // Mounted is called initially
@@ -149,8 +116,6 @@
             this.user.password = '';
             this.user.new_password = '';
             this.userOld = JSON.parse(JSON.stringify(this.user));
-
-
         }
 
         private showNewPasswordField() {
@@ -208,7 +173,6 @@
                     type: 'is-success',
                 });
                 self.user.password = '';
-                self.user.new_password = '';
                 self.user.new_password = '';
                 self.updateUserInfo();
                 self.userOld = JSON.parse(JSON.stringify(self.user));

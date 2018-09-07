@@ -6,7 +6,6 @@ export interface User {
     email_confirmation: string;
     new_email: string;
     password: string;
-    password_confirmation: string;
     new_password: string;
     email_confirmed: boolean;
     address: string;

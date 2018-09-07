@@ -53,23 +53,7 @@
     @Component
     export default class Login extends Vue {
         // Data
-        protected user: User = {
-            id: 0,
-            firstname: '',
-            lastname: '',
-            email: '',
-            new_email: '',
-            email_confirmation: '',
-            password: '',
-            password_confirmation: '',
-            new_password: '',
-            email_confirmed: false,
-            address : '',
-            address_addition: '',
-            postcode : '',
-            city : '',
-            country : '',
-        };
+        protected user: User = {} as User;
         protected disabled: boolean = false;
         protected errorMsg: string = '';
         protected action: string = '';
