@@ -40,8 +40,8 @@ class UserWebservice {
             firstname: user.firstname,
             lastname: user.lastname,
             email: user.email,
-            current_password: user.password,
-            new_password: user.new_password,
+            current_password: user.currentPassword,
+            new_password: user.password,
         });
     }
 

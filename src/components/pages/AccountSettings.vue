@@ -39,7 +39,7 @@
                             <label class="label">CURRENT PASSWORD</label>
                             </div>
                             <div class="control is-fullwidth">
-                                <input name="password" class="input" required v-model.lazy="user.password" type="password">
+                                <input name="password" class="input" required v-model.lazy="user.currentPassword" type="password">
                             </div>
                         </div>
                         
@@ -54,7 +54,7 @@
                                 <label class="label">NEW PASSWORD</label>
                             </div>
                             <div class="control is-fullwidth">
-                                <input name="new_password" class="input" required v-model.lazy="user.new_password" type="password">
+                                <input name="password" class="input" required v-model.lazy="user.password" type="password">
                             </div>
                         </div>
                                     
@@ -113,8 +113,8 @@
         private mounted() {
             // deep copy the current user object
             this.user = JSON.parse(JSON.stringify(this.currentUser));
+            this.user.currentPassword = '';
             this.user.password = '';
-            this.user.new_password = '';
             this.userOld = JSON.parse(JSON.stringify(this.user));
         }
 
@@ -125,8 +125,8 @@
         private save() {
             const self = this;
             // tslint:disable-next-line:max-line-length
-            if (this.user.firstname !== this.userOld.firstname || this.user.lastname !== this.userOld.lastname || this.user.email !== this.userOld.email || this.user.new_password !== '') {
-                if (this.user.password === '') {
+            if (this.user.firstname !== this.userOld.firstname || this.user.lastname !== this.userOld.lastname || this.user.email !== this.userOld.email || this.user.password !== '') {
+                if (this.user.currentPassword === '') {
                         this.updatingUserInfoErrorMsg = 'Please enter the current password';
                         return false;
                 } else if (this.user.firstname === '' || this.user.lastname === '') {
@@ -138,14 +138,14 @@
                 } else if (!this.validateEmail(this.user.email)) {
                     this.updatingUserInfoErrorMsg = 'Please enter a valid E-Mail address';
                     return false;
-                } else if (this.changePassword && this.user.new_password !== '' ) {
-                    if (this.user.password === '') {
+                } else if (this.changePassword && this.user.password !== '' ) {
+                    if (this.user.currentPassword === '') {
                         this.updatingUserInfoErrorMsg = 'Please enter the current password';
                         return false;
-                    } else if (this.user.password.length < 8) {
+                    } else if (this.user.currentPassword.length < 8) {
                         this.updatingUserInfoErrorMsg = 'Current password is incorrect!';
                         return false;
-                    } else if (this.user.new_password.length < 8) {
+                    } else if (this.user.password.length < 8) {
                         this.updatingUserInfoErrorMsg = 'The password must be at least 8 characters long';
                         return false;
                     }
@@ -172,8 +172,8 @@
                     message: 'Changes saved successfully!',
                     type: 'is-success',
                 });
+                self.user.currentPassword = '';
                 self.user.password = '';
-                self.user.new_password = '';
                 self.updateUserInfo();
                 self.userOld = JSON.parse(JSON.stringify(self.user));
             }).catch(function(error) {

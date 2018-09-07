@@ -22,22 +22,7 @@ const mutations: MutationTree<State> = {
 
     logout: (currentState) => {
         currentState.loggedIn = false;
-        currentState.currentUser = {
-            id: 0,
-            firstname: '',
-            lastname: '',
-            email: '',
-            new_email: '',
-            email_confirmation: '',
-            password: '',
-            new_password: '',
-            email_confirmed: false,
-            address: '',
-            address_addition: '',
-            postcode: '',
-            city: '',
-            country: '',
-        };
+        currentState.currentUser = {} as User;
 
         // console.log('Reset the account currentUser and the loggedIn status');
     },
@@ -74,22 +59,7 @@ const getters = {
 function initialState() {
     return {
         loggedIn: false,
-        currentUser: {
-            id: 0,
-            firstname: '',
-            lastname: '',
-            email: '',
-            new_email: '',
-            email_confirmation: '',
-            password: '',
-            new_password: '',
-            email_confirmed: false,
-            address: '',
-            address_addition: '',
-            postcode : '',
-            city: '',
-            country: '',
-        },
+        currentUser: {} as User,
     }; }
 
 const state: State = initialState();
