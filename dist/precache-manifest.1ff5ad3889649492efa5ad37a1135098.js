@@ -20,12 +20,12 @@ self.__precacheManifest = [
     "url": "/img/team/transparentSensei.png"
   },
   {
-    "revision": "a69a8fb5782d83c87d640525968ff373",
-    "url": "/img/sci-fi-castle-in-the-light.jpg"
-  },
-  {
     "revision": "134e60c6ae590c1c8f33fa6fd0006e63",
     "url": "/img/team/transparentNoob.png"
+  },
+  {
+    "revision": "a69a8fb5782d83c87d640525968ff373",
+    "url": "/img/sci-fi-castle-in-the-light.jpg"
   },
   {
     "revision": "bc66163ea1e6e40a83770a57e56eb4af",
@@ -36,20 +36,16 @@ self.__precacheManifest = [
     "url": "/img/team/majed.png"
   },
   {
-    "revision": "ff18ba19e791abf2576f13e74e807932",
-    "url": "/img/sci_fi_classroom.jpg"
-  },
-  {
-    "revision": "25c3e6bec015e2d29144eb41116e408f",
-    "url": "/index.html"
-  },
-  {
     "revision": "636e410b58ce11c916dd50d6b2f4a044",
     "url": "/img/sci_fi_classroom.png"
   },
   {
-    "revision": "e7ddd391a948f88c77e5a7fb78f44045",
-    "url": "/img/logo_100x35.png"
+    "revision": "5e122d684a5cbebe93d09a87d4a57bba",
+    "url": "/index.html"
+  },
+  {
+    "revision": "ff18ba19e791abf2576f13e74e807932",
+    "url": "/img/sci_fi_classroom.jpg"
   },
   {
     "revision": "508ff804229c6ce3ce1b8f39a886eea5",
@@ -58,6 +54,10 @@ self.__precacheManifest = [
   {
     "revision": "c42942a4b7349a1f9bcc0c875edd2665",
     "url": "/img/loaders/spinner.gif"
+  },
+  {
+    "revision": "e7ddd391a948f88c77e5a7fb78f44045",
+    "url": "/img/logo_100x35.png"
   },
   {
     "revision": "d4d16eeac9587d2da20c386cfd7b575e",
@@ -72,8 +72,8 @@ self.__precacheManifest = [
     "url": "/img/github.jpg"
   },
   {
-    "revision": "69d274fde487d594c59f",
-    "url": "/js/app.e548d107.js"
+    "revision": "01236e579a713f11d42d",
+    "url": "/js/app.8fd87839.js"
   },
   {
     "revision": "a28d60993fcd43aa707d701b2c149731",
@@ -112,12 +112,12 @@ self.__precacheManifest = [
     "url": "/img/courses/webdesign.jpg"
   },
   {
-    "revision": "073cf0e58f1a5b8f8b1bded8846bc1c0",
-    "url": "/img/gifs/codegeass.gif"
-  },
-  {
     "revision": "468dcce53f4075162557cf79f3771506",
     "url": "/img/gifs/eye.gif"
+  },
+  {
+    "revision": "073cf0e58f1a5b8f8b1bded8846bc1c0",
+    "url": "/img/gifs/codegeass.gif"
   },
   {
     "revision": "00959572c5b86749b3dc4f91dba9d176",
@@ -184,7 +184,7 @@ self.__precacheManifest = [
     "url": "/css/chunk-vendors.714de41e.css"
   },
   {
-    "revision": "69d274fde487d594c59f",
-    "url": "/css/app.376dc4d0.css"
+    "revision": "01236e579a713f11d42d",
+    "url": "/css/app.e5cb4248.css"
   }
 ];
