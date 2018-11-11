@@ -49,5 +49,7 @@ describe('My First Test', function() {
   
         // //test registration without a first name, expect error
         cy.get('#login_error').should('contain', 'Please enter your first name')
+
+        //mynamejeff
   })
 })
