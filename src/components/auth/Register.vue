@@ -15,7 +15,7 @@
                         <span class="icon is-small is-left">
                         <i class="fa fa-user"></i>
                         </span>
-                        <span v-if="errorMsg=='firstname'" class="help is-danger">Please enter your first name</span>      
+                        <span v-if="errorMsg=='firstname'" id="login_error" class="help is-danger">Please enter your first name</span>      
                     </p>
                 </div>
 
@@ -49,7 +49,7 @@
                         <span v-if="errorMsg=='passwordNotValid'" class="help is-danger">The password must be at least 8 characters long</span>
                     </p>
                 </div>
-              <button class="button is-block is-primary is-large is-fullwidth" v-on:click="register()" @keyup.enter="register" :disabled="disabled">Sign up</button>
+              <button id="register_button" class="button is-block is-primary is-large is-fullwidth" v-on:click="register()" @keyup.enter="register" :disabled="disabled">Sign up</button>
           </div>
             <!-- <div class="form-group">
                 <span id="errorMsg" style="color:red; font-weight: 600">{{errorMsg}}<br/></span>
@@ -134,17 +134,17 @@ export default class Register extends Vue {
     }
 
     private validate() {
-        if (this.user.firstname === '') {
+        if (!this.user.firstname || this.user.firstname === '') {
             // this.errorMsg = 'Plaese enter your Name';
             this.errorMsg = 'firstname';
             return 0;
-        } else if (this.user.lastname === '') {
+        } else if (!this.user.lastname ||this.user.lastname === '') {
             this.errorMsg = 'lastname';
             return 0;
-        } else if (!this.validateEmail(this.user.email)) {
+        } else if (!this.user.email || !this.validateEmail(this.user.email)) {
             this.errorMsg = 'email';
             return 0;
-        } else if (this.user.password === '') {
+        } else if (!this.user.password || this.user.password === '') {
             this.errorMsg = 'password';
             return 0;
         } else {
